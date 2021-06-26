@@ -14,7 +14,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         var sch;
-
         var url = "https://lp-staging.devlabs.id/";
         window.onload = getContent;
         function reply_click(clicked_id) {
@@ -43,24 +42,6 @@
             }
 
         }
-        $(document).ready(function () {
-            $('#resolusilower').click(function (e) {
-                $("#dropdownMenuButton1").text("Kualitas 144p")
-                var video = document.getElementById('videoPlayer');
-                video.src = url + 'video/' + sch.video._id + '/' + "144";
-            });
-            $('#resolusilow').click(function (e) {
-                $("#dropdownMenuButton1").text("Kualitas 240p")
-                var video = document.getElementById('videoPlayer');
-                video.src = url + 'video/' + sch.video._id + '/' + "240";
-            });
-            $('#resolusihigh').click(function (e) {
-                $("#dropdownMenuButton1").text("Kualitas 360p")
-                var video = document.getElementById('videoPlayer');
-                video.src = url + 'video/' + sch.video._id + '/' + "360";
-            });
-        });
-
         function getContent() {
             fetch('https://lp-staging.devlabs.id/get/jadwal')
                 .then(response => response.json())
@@ -76,6 +57,9 @@
         }
     </script>
     <style>
+        .drdpdown{
+    overflow-y:inherit !important;
+}
         video {
             width: 100%;
             height: auto;
@@ -195,7 +179,7 @@
         }
 
         span {
-            font-size: 2.1vmin;
+            font-size: 2vmin;
             color: #fff;
             ;
             display: block;
@@ -246,7 +230,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="modalVideo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalVideo"  aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -255,20 +239,19 @@
                 </div>
                 <div class="modal-body drdpdown">
                     <!-- <video id="videoPlayer" controls="controls" preload="metadata" width="100%" height="472px" disablepictureinpicture controlslist="nodownload" src="https://lp-staging.devlabs.id/assets/upload/adm2baktionline/video/compressed-144-20210408-10952b8585903732e5078504edf6b5b2.mp4"></video> -->
-                    <video id="videoPlayer" controls="controls" preload="metadata" width="100%" height="472px"
-                        disablepictureinpicture controlslist="nodownload"></video>
-
-                    <div class="dropdown mt-2 ">
-                        <button class="btn btn-secondary dropdown-toggle  " style="float: right;"  type="button" id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Kualitas 144p
+                    <video id="videoPlayer" controls="controls" preload="metadata" width="100%" height="472px" disablepictureinpicture controlslist="nodownload" ></video>
+                    
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                          Dropdown button
                         </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><button id="resolusilower" class="dropdown-item">Kualitas 144p </a></li>
-                            <li><button id="resolusilow" class="dropdown-item">Kualitas 240p </a></li>
-                            <li><button id="resolusihigh" class="dropdown-item">Kualitas 360p </a></li>
-                        </ul>
-                    </div>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                      </div>
+                    
 
                 </div>
             </div>
