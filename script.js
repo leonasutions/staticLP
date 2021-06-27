@@ -1,7 +1,7 @@
 var sch;
 var url = "https://lp-staging.devlabs.id/";
 window.onload = getJadwal().then((data) => {
-  sch = data;
+  sch = data.schedule;
   demo = false;
   survey = false;
   if (demo && survey) {
@@ -50,7 +50,10 @@ window.onload = getJadwal().then((data) => {
       }
     });
   }
+
+  
 });
+
 function reply_click(clicked_id) {
   if (clicked_id === "videoButton") {
     $("#labelVideo").text(sch.video.details.title);
