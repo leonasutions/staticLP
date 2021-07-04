@@ -234,7 +234,7 @@ function getJadwal() {
           clearTimeout(timerId);
           elem.hidden="true"
           hubungButon.hidden=false
-          // konekInternet();
+          konekInternet();
         } else {
           elem.innerHTML = 'Anda akan terhubung ke internet setelah '+timeLeft+' detik, atau selesaikan survey dan klik tombol hubungkan ke internet';
           timeLeft--;
