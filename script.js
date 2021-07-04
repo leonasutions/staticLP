@@ -5,11 +5,11 @@ let videoArray = [];
 let audioArray = [];
 var dfp;
 var dataAll;
-var passwordLogin = 'baktiaksi';
-var username = 'bakti';
-// var unencryptedPassword = chapId + passwordLogin + chapChallenge;		
-// var encryptedPassword = hexMD5(chapId + passwordLogin + chapChallenge);		
-var encryptedPassword = hexMD5( passwordLogin );		
+var passwordLogin = "baktiaksi";
+var username = "bakti";
+// var unencryptedPassword = chapId + passwordLogin + chapChallenge;
+// var encryptedPassword = hexMD5(chapId + passwordLogin + chapChallenge);
+var encryptedPassword = hexMD5(passwordLogin);
 let formatsVideo = {
   ogg: 'video/ogg; codecs="theora"',
   h264: 'video/mp4; codecs="avc1.42E01E"',
@@ -156,8 +156,14 @@ const audioData = audioArray.join();
 const videoData = videoArray.join();
 
 var mediaDeviceArray = [];
-var mac = document.getElementById("mac").value=='$(mac)'?'3C:22:FB:BD:9A:CB':document.getElementById("mac").value ;
-var ipLocal = document.getElementById("ipLocal").value=='$(ip)' ? '192.168.22.138':document.getElementById("ipLocal").value;
+var mac =
+  document.getElementById("mac").value == "$(mac)"
+    ? "3C:22:FB:BD:9A:CB"
+    : document.getElementById("mac").value;
+var ipLocal =
+  document.getElementById("ipLocal").value == "$(ip)"
+    ? "192.168.22.138"
+    : document.getElementById("ipLocal").value;
 let formData = {
   font: client.getFonts() || "-",
   resolution: client.getAvailableResolution() || "-",
@@ -218,8 +224,8 @@ $(document).ready(function () {
 });
 
 function getJadwal() {
-  var hubungButon = document.getElementById('hubungButton')
-  hubungButon.hidden=true
+  var hubungButon = document.getElementById("hubungButton");
+  hubungButon.hidden = true;
   $.ajax({
     type: "POST",
     dataType: "json",
@@ -227,22 +233,12 @@ function getJadwal() {
     url: "https://lp-staging.devlabs.id/get/jadwal/",
     success: function (data) {
       var timeLeft = 45;
-      var elem = document.getElementById('textCountdown');
-      var timerId = setInterval(countdown, 1000);
-      function countdown() {
-        if (timeLeft == -1) {
-          clearTimeout(timerId);
-          elem.hidden="true"
-          hubungButon.hidden=false
-          konekInternet();
-        } else {
-          elem.innerHTML = 'Anda akan terhubung ke internet setelah '+timeLeft+' detik, atau selesaikan survey dan klik tombol hubungkan ke internet';
-          timeLeft--;
-        }}
-      dfp = data.dfp._id
+      var elem = document.getElementById("textCountdown");
+
+      dfp = data.dfp._id;
       sch = data.schedule;
-      dataAll = data
-      demoId = data.demoId
+      dataAll = data;
+      demoId = data.demoId;
       $("#judulBanner").text(
         data.schedule.banner.details.title
           ? data.schedule.banner.details.title
@@ -254,6 +250,8 @@ function getJadwal() {
       survey = data.survey;
       //   console.log(document.getElementById("mac").value);
       if (demo && survey) {
+        elem.hidden=true
+        hubungButon.hidden = false;
         $("#bar").css("width", 100 + "%");
         $(`#doneSurvey`).append(
           `<h2>Terima kasih ${data.name}, telah berpartisipasi di survey BAKTI ONLINE</h2>`
@@ -265,15 +263,29 @@ function getJadwal() {
           data.questionsLength + 5 + "/" + (data.questionsLength + 5)
         );
       } else if (demo == true && survey == false) {
-        console.log('sini lo');
+        var timerId = setInterval(countdown, 1000);
+        function countdown() {
+          if (timeLeft == -1) {
+            clearTimeout(timerId);
+            elem.hidden = "true";
+            hubungButon.hidden = false;
+            konekInternet();
+          } else {
+            elem.innerHTML =
+              "Anda akan terhubung ke internet setelah " +
+              timeLeft +
+              " detik, atau selesaikan survey dan klik tombol hubungkan ke internet";
+            timeLeft--;
+          }
+        }
         var barWidth = (5 / (data.questionsLength + 5)) * 100;
         $("#textCount").text("6" + "/" + (data.questionsLength + 5));
         $("#bar").css("width", barWidth + "%");
         $("#regForm").css("display", "block");
         var x = document.getElementsByClassName("tab");
-        lenFor = x.length
+        lenFor = x.length;
         for (var i = 0; i < lenFor; i++) {
-          x[0].remove()
+          x[0].remove();
         }
         counterQuestion = 0;
         data.questions.forEach((question) => {
@@ -309,9 +321,23 @@ function getJadwal() {
           }
           counterQuestion++;
         });
-        x[0].style.display='block'
-
+        x[0].style.display = "block";
       } else {
+        var timerId = setInterval(countdown, 1000);
+        function countdown() {
+          if (timeLeft == -1) {
+            clearTimeout(timerId);
+            elem.hidden = "true";
+            hubungButon.hidden = false;
+            konekInternet();
+          } else {
+            elem.innerHTML =
+              "Anda akan terhubung ke internet setelah " +
+              timeLeft +
+              " detik, atau selesaikan survey dan klik tombol hubungkan ke internet";
+            timeLeft--;
+          }
+        }
         var barWidth = (1 / (data.questionsLength + 5)) * 100;
         $("#bar").css("width", barWidth + "%");
         $("#textCount").text("1" + "/" + (data.questionsLength + 5));
@@ -445,9 +471,9 @@ function nextPrev(n) {
         paramObj[kv.name] = kv.value;
       }
     });
-    paramObj['templateId']=sch.survey._id
-    paramObj['dfpId']=dfp
-    paramObj['demoId']=demoId
+    paramObj["templateId"] = sch.survey._id;
+    paramObj["dfpId"] = dfp;
+    paramObj["demoId"] = demoId;
     $.ajax({
       type: "POST",
       url: "https://lp-staging.devlabs.id/lite/addsurvey",
@@ -457,15 +483,18 @@ function nextPrev(n) {
       contentType: "application/json",
     });
     $("#regForm").css("display", "none");
-    if (paramObj.fname==undefined){
-      paramObj.fname=dataAll.name.split(' ')[0]
-      paramObj.lname=dataAll.name.split(' ')[1]
+    if (paramObj.fname == undefined) {
+      paramObj.fname = dataAll.name.split(" ")[0];
+      paramObj.lname = dataAll.name.split(" ")[1];
     }
     $(`#doneSurvey`).append(
       `<h2>Terima kasih ${paramObj.fname} ${paramObj.lname}, telah berpartisipasi di survey BAKTI ONLINE</h2>`
     );
     $("#doneSurvey").css("display", "block");
     document.getElementById("hubungButton").disabled = false;
+    var elem = document.getElementById("textCountdown");
+    elem.hidden=true
+    document.getElementById("hubungButton").hidden = false;
     return false;
   }
   showTab(currentTab);
@@ -518,11 +547,11 @@ function validateForm() {
   }
   return valid;
 }
-function konekInternet(){
-  var passwordLogin = 'baktiaksi';
-  var username = 'bakti';
+function konekInternet() {
+  var passwordLogin = "baktiaksi";
+  var username = "bakti";
   var form = document.getElementById("logininternet");
-  $('#userInput').val(username);
-  $('#passwordInput').val(encryptedPassword);
+  $("#userInput").val(username);
+  $("#passwordInput").val(encryptedPassword);
   form.submit();
 }
