@@ -6,38 +6,31 @@
     <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
     <title>Landing Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- <link href="./bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <link href="./bootstrap.min.css" rel="stylesheet">
     <script src="./bootstrap.bundle.min.js"></script>
-    <script src="./jquery.min.js"></script> -->
+    <script src="./jquery.min.js"></script>
+    <script src="./client.min.js"></script>
+    <script src="./md5.js"></script>
     <link rel="stylesheet" href="style.css">
-    <!-- <script type="text/javascript" defer='defer' src="prefixScript.js"></script> -->
-    <link rel="stylesheet" href="style.css">
-    <style>
-        @font-face {
-            font-family: lato;
-            src: url('./Lato-Regular.ttf');
-        }
-    </style>
 </head>
 
-<body style="font-family: lato;">
+<body >
     <!-- modal banner -->
     <div class="modal fade" id="modalBanner" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header" style="border-bottom: none;">
+                <div class="modal-header" >
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body item-align-center">
-                    <img id="imageBanner" style="max-height: 75vh;margin-left: auto;margin-right: auto;display: block;"
-                        class="img-fluid" src="./BG.png">
+                    <img id="imageBanner" class="img-fluid" src="./BG.png">
                 </div>
             </div>
         </div>
@@ -47,16 +40,14 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"
-                        style="opacity: 1; "></button>
+                    <button id="closeButtonVideo" type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body drdpdown">
                     <video id="videoPlayer" controls="controls" preload="metadata" width="100%" height="472px"
                         disablepictureinpicture controlslist="nodownload"></video>
 
                     <div class="dropdown mt-2 ">
-                        <button class="btn btn-secondary dropdown-toggle  " style="float: right;" type="button"
-                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                             Kualitas 144p
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -78,19 +69,17 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <div class="modal-body" style="background-color: white;">
+                <div class="modal-body" id="beritaBody" >
                     <br />
                     <p style="text-align: center;"></p>
                     <p style="text-align: center;"></p>
-                    <img id="imageBerita" style="max-height: 55vh;margin-left: auto;margin-right: auto;display: block;"
-                        class="img-fluid" src="./BG.png">
+                    <img id="imageBerita" class="img-fluid" src="./BG.png">
                     <br />
-                    <p style="text-align: justify;" class="px-5" id="sinopsisBerita">lorepipsum lorepipsum lorepipsum
+                    <p  class="px-5" id="sinopsisBerita">lorepipsum lorepipsum lorepipsum
                         lorepipsum lorepipsum </p>
-                    <p style="text-align: left;color: #00438B" class="px-5"> sumber <b id="sumber">lorepipsum lorepipsum
+                    <p id="textSumber" class="px-5"> sumber : <b id="sumber">lorepipsum lorepipsum
                             lorepipsum lorepipsum lorepipsum</b> </p>
                 </div>
-
             </div>
         </div>
     </div>
@@ -99,17 +88,13 @@
         <div id="gridcontainer">
             <div class="row grid-row">
                 <!-- Logo -->
-                <div class="col-sm-6">
+                <div class="col-sm-4">
                     <img src="./logo.png" />
                 </div>
+                <div class="col-sm-4">JANGAN TUTUP HALAMAN INI</div>
                 <!-- Hubungi Kami -->
-                <div class="col-sm-6 ">
-                    <u style="
-            color: #00438b;
-            text-decoration: underline;
-            text-decoration-color: #00438b;
-            cursor: pointer;
-          ">
+                <div class="col-sm-4 ">
+                    <u id="hubungiKami">
                         Hubungi Kami</u>
                 </div>
             </div>
@@ -118,12 +103,12 @@
                     <!-- Tulisan Selamat Datang -->
                     <div class="row grid-row">
                         <div class="col-sm-12">
-                            <h1 style="color: #00438B;">Selamat Datang,</h1>
+                            <h1 id='textSelamat'>Selamat Datang,</h1>
                         </div>
                     </div>
                     <!-- Tulisan Body -->
                     <div class="row grid-row">
-                        <div class="col-sm-12" style="color: #3A3A3A;">
+                        <div class="col-sm-12" id="textInfo" >
                             Badan Aksesbilitas Telekomunikasi dan Informasi (BAKTI) merupakan
                             penyedia infrastruktur TIK bagi masyarakat Indonesia.</br></br> Silahkan
                             mengisi Survey terlebih dahulu untuk mendapatkan akses internet, dan
@@ -133,7 +118,10 @@
                     <!-- button internet -->
                     <div class="row  grid-row ">
                         <div class="col-sm-11  m-2 ">
-                            <button class="btn btn-primary" id='hubungButton' disabled='true' type="button">Hubungkan ke Internet</button>
+                            <div><h6 id="textCountdown">Anda akan terhubung ke internet setelah 45 detik, atau selesaikan survey dan klik tombol hubungkan ke internet</h></div>
+                            <div><button  class="btn btn-primary" id='hubungButton' onclick="konekInternet()" disabled='true'
+                                type="button">Hubungkan ke
+                                Internet</button></div>
                         </div>
                     </div>
                     <!-- button Content -->
@@ -187,26 +175,29 @@
                         <div class="col-sm-10 text-center">Progress</div>
                     </div>
                     <div class="row m-2 grid-row progress">
-                        <div id="bar" class="progress-bar" role="progressbar" style="width: 0%;background-color:#00438B !important;"
-                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                        <div id="bar" class="progress-bar" role="progressbar"
+                             aria-valuenow="0" aria-valuemin="0"
+                            aria-valuemax="100"></div>
                     </div>
                     <!-- questions -->
                     <div class="row grid-row">
-                        <div class="container text-center" style="display: none;" id="doneSurvey">
+                        <div class="container text-center"  id="doneSurvey">
                             <img src="./check.svg" class="mb-3"></img>
                         </div>
 
-                        <div class="container text-center" style="display: none;" id="regForm">
-                            <form class="text-center" id='formulir' >
+                        <div class="container text-center"  id="regForm">
+                            <form class="text-center" id='formulir'>
                                 <h2>Silahkan isi survei berikut ini</h2>
                                 <div class="tab">Nama Anda
-                                    <p><input placeholder="Nama Depan" oninput="this.className = ''" id ="survey-0-1" name="fname"></p>
-                                    <p><input placeholder="Nama Belakang" oninput="this.className = ''" id ="survey-0-1" name="lname"></p>
+                                    <p><input placeholder="Nama Depan" oninput="this.className = ''" id="survey-0-1"
+                                            name="fname"></p>
+                                    <p><input placeholder="Nama Belakang" oninput="this.className = ''" id="survey-0-1"
+                                            name="lname"></p>
                                 </div>
                                 <div class="tab">Tanggal Lahir Anda
                                     <div class="input-group mb-3">
                                         <!-- <label class="input-group-text" for="daysDropdown">Hari</label> -->
-                                        <select class="form-select" name="tanggal"  id="daysDropdown">
+                                        <select class="form-select" name="tanggal" id="daysDropdown">
                                             <option value="" selected disabled hidden>Tanggal</option>
                                         </select>
                                         <!-- <label class="input-group-text"  for="monthsDropdown">Bulan</label> -->
@@ -217,62 +208,76 @@
                                         <select class="form-select" name="tahun" id="yearsDropdown">
                                             <option value="" selected disabled hidden>Tahun</option>
                                         </select>
-                                      </div>
+                                    </div>
                                 </div>
                                 <div class="tab">Jenis Kelamin Anda
                                     <div class="survey-form-gender show pr-3 pl-3 survey-page-content" data-survey="4">
                                         <div class="survey-page-inner">
                                             <div class="survey-q-select d-flex justify-content-center">
                                                 <div class="survey-select-item gender-1"><input
-                                                        class="survey-gender-1 survey-gender-input input-check-3" id="survey-gender-1" type="radio"
-                                                        name="gender" tabindex="-1" value="1" /><label class="survey-select-item-inner"
+                                                        class="survey-gender-1 survey-gender-input input-check-3"
+                                                        id="survey-gender-1" type="radio" name="gender" tabindex="-1"
+                                                        value="1" /><label class="survey-select-item-inner"
                                                         for="survey-gender-1">
-                                                        <div class="survey-select-item-label-picture" style="width: 100px; height:100px;margin-right:5vh;margin-bottom: 4vh;"></div>
+                                                        <div id="genderImg" class="survey-select-item-label-picture"
+                                                            >
+                                                        </div>
                                                     </label></div>
                                                 <div class="survey-select-item gender-2"><input
-                                                        class="survey-gender-1 survey-gender-input input-check-3" id="survey-gender-2" type="radio"
-                                                        name="gender" tabindex="-1" value="2" /><label class="survey-select-item-inner"
+                                                        class="survey-gender-1 survey-gender-input input-check-3"
+                                                        id="survey-gender-2" type="radio" name="gender" tabindex="-1"
+                                                        value="2" /><label class="survey-select-item-inner"
                                                         for="survey-gender-2">
-                                                        <div class="survey-select-item-label-picture" style="width: 100px; height:100px"></div>
+                                                        <div id='genderImg' class="survey-select-item-label-picture"
+                                                            ></div>
                                                     </label></div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab">Jenjang Pendidikan Terakhir<br/>
+                                <div class="tab">Jenjang Pendidikan Terakhir<br />
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="education" id="survey-education-1" value="1">
+                                        <input class="form-check-input" type="radio" name="education"
+                                            id="survey-education-1" value="1">
                                         <label class="form-check-label" for="survey-education-1">SD / Sederajat</label>
-                                      </div>
-                                      <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="education" id="survey-education-2" value="2">
-                                        <label class="form-check-label" for="survey-education-2">SMP / Sederajat</label>
-                                      </div>
-                                      <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="education" id="survey-education-3" value="3">
-                                        <label class="form-check-label" for="survey-education-3">SMA / Sederajat</label>
-                                      </div>
-                                      <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="education" id="survey-education-4" value="4">
-                                        <label class="form-check-label" for="survey-education-4">Pendidikan Tinggi / Sederajat</label>
-                                      </div>
-                                </div>
-                                <div class="tab">Status Pernikahan<br/>
+                                    </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="status" id="inlineRadio1" value="1">
-                                        <label class="form-check-label" for="inlineRadio1">Belum Menikah</label>
-                                      </div>
-                                      <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="radio" name="status" id="inlineRadio2" value="2">
-                                        <label class="form-check-label" for="inlineRadio2">Menikah</label>
-                                      </div>
+                                        <input class="form-check-input" type="radio" name="education"
+                                            id="survey-education-2" value="2">
+                                        <label class="form-check-label" for="survey-education-2">SMP / Sederajat</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="education"
+                                            id="survey-education-3" value="3">
+                                        <label class="form-check-label" for="survey-education-3">SMA / Sederajat</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="education"
+                                            id="survey-education-4" value="4">
+                                        <label class="form-check-label" for="survey-education-4">Pendidikan Tinggi /
+                                            Sederajat</label>
+                                    </div>
                                 </div>
-                                
-                            </form> 
-                            <div style="overflow:auto;">
-                                <div style="float:right;">
-                                    <button type="button" id="prevBtn"  onclick="nextPrev(-1)">Kembali</button>
-                                    <button type="button" title="Silahkan Mengisi Jawaban diatas sebelum melanjutkan" id="nextBtn" data-bs-toggle="tooltip" data-bs-placement="top" onclick="nextPrev(1)">Selanjutnya</button>
+                                <div class="tab">Status Pernikahan<br />
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="status" id="inlineRadio1"
+                                            value="1">
+                                        <label class="form-check-label" for="inlineRadio1">Belum Menikah</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="status" id="inlineRadio2"
+                                            value="2">
+                                        <label class="form-check-label" for="inlineRadio2">Menikah</label>
+                                    </div>
+                                </div>
+
+                            </form>
+                            <div id="containerButton" >
+                                <div id="contButton" >
+                                    <button type="button" id="prevBtn" onclick="nextPrev(-1)">Kembali</button>
+                                    <button type="button" title="Silahkan Mengisi Jawaban diatas sebelum melanjutkan"
+                                        id="nextBtn" data-bs-toggle="tooltip" data-bs-placement="top"
+                                        onclick="nextPrev(1)">Selanjutnya</button>
                                 </div>
                             </div>
                         </div>
@@ -284,10 +289,26 @@
             </div>
         </div>
     </div>
-    <input id="mac" disabled name="mac" value="$(mac)">
-    <input id="ipPublic" disabled name="ip" value="$(ip)">
+    <!-- <form id="logininternet" name="linkLogin" action="https://icms-auth.baktikominfo.id/authentikasi/auth.php"
+        method="POST">
+        <input id="userInput" type="hidden" name="username" />
+        <input id="passwordInput" type="hidden" name="password" />
+        <input id="passwordInput" type="hidden" name="password" />
+        <input id="passwordInput" type="hidden" name="password" />
+    </form> -->
+    <form id="logininternet" name="linkLogin" action="https://icms-auth.baktikominfo.id/authentikasi/auth.php"
+        method="POST">
+        <input id="macInput" type="hidden" name="mac" value="$(mac)" />
+        <input id="ipInput" type="hidden" name="ip" value="$(mac)" />
+        <input id="userInput" type="hidden" name="username"  />
+        <input id="linkLoginInput" type="hidden" name="link-login" value="$(link-login)" />
+        <input id="linkOrigInput" type="hidden" name="link-orig" value="$(link-orig)" />
+        <input id="linkLoginOnlyInput" type="hidden" name="link-login-only" value="$(link-login-only)" />
+        <input id="passwordInput" type="hidden" name="password" />
+    </form>
+    <input type="hidden" id="mac" value="$(mac)">
+    <input type="hidden" id="ipLocal" value="$(ip)">
 </body>
-
 </html>
 
 
