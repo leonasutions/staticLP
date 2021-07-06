@@ -20,12 +20,12 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body >
+<body>
     <!-- modal banner -->
     <div class="modal fade" id="modalBanner" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header" >
+                <div class="modal-header">
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
@@ -40,14 +40,16 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button id="closeButtonVideo" type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button id="closeButtonVideo" type="button" class="btn-close btn-close-white"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body drdpdown">
                     <video id="videoPlayer" controls="controls" preload="metadata" width="100%" height="472px"
                         disablepictureinpicture controlslist="nodownload"></video>
 
                     <div class="dropdown mt-2 ">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Kualitas 144p
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -69,13 +71,13 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <div class="modal-body" id="beritaBody" >
+                <div class="modal-body" id="beritaBody">
                     <br />
                     <p style="text-align: center;"></p>
                     <p style="text-align: center;"></p>
                     <img id="imageBerita" class="img-fluid" src="./BG.png">
                     <br />
-                    <p  class="px-5" id="sinopsisBerita">lorepipsum lorepipsum lorepipsum
+                    <p class="px-5" id="sinopsisBerita">lorepipsum lorepipsum lorepipsum
                         lorepipsum lorepipsum </p>
                     <p id="textSumber" class="px-5"> sumber : <b id="sumber">lorepipsum lorepipsum
                             lorepipsum lorepipsum lorepipsum</b> </p>
@@ -91,11 +93,16 @@
                 <div class="col-sm-4">
                     <img src="./logo.png" />
                 </div>
-                <div class="col-sm-4">JANGAN TUTUP HALAMAN INI</div>
+                <div class="col-sm-4">
+                    <div class="alert alert-danger" style="text-align: center;">
+                        JANGAN TUTUP HALAMAN INI
+                    </div>
+                </div>
                 <!-- Hubungi Kami -->
                 <div class="col-sm-4 ">
-                    <u id="hubungiKami">
-                        Hubungi Kami</u>
+                    <u id="hubungiKami" style="float: right; padding-right: 10px;">
+                        Hubungi Kami
+                    </u>
                 </div>
             </div>
             <div class="row grid-row ">
@@ -108,7 +115,7 @@
                     </div>
                     <!-- Tulisan Body -->
                     <div class="row grid-row">
-                        <div class="col-sm-12" id="textInfo" >
+                        <div class="col-sm-12" id="textInfo">
                             Badan Aksesbilitas Telekomunikasi dan Informasi (BAKTI) merupakan
                             penyedia infrastruktur TIK bagi masyarakat Indonesia.</br></br> Silahkan
                             mengisi Survey terlebih dahulu untuk mendapatkan akses internet, dan
@@ -118,10 +125,13 @@
                     <!-- button internet -->
                     <div class="row  grid-row ">
                         <div class="col-sm-11  m-2 ">
-                            <div><h6 id="textCountdown">Anda akan terhubung ke internet setelah 45 detik, atau selesaikan survey dan klik tombol hubungkan ke internet</h></div>
-                            <div><button  class="btn btn-primary" id='hubungButton' onclick="konekInternet()" disabled='true'
-                                type="button">Hubungkan ke
-                                Internet</button></div>
+                            <div>
+                                <h6 id="textCountdown">Anda akan terhubung ke internet setelah 45 detik, atau selesaikan
+                                    survey dan klik tombol hubungkan ke internet</h>
+                            </div>
+                            <div><button class="btn btn-primary" id='hubungButton' onclick="konekInternet()"
+                                    disabled='true' type="button">Hubungkan ke
+                                    Internet</button></div>
                         </div>
                     </div>
                     <!-- button Content -->
@@ -175,17 +185,16 @@
                         <div class="col-sm-10 text-center">Progress</div>
                     </div>
                     <div class="row m-2 grid-row progress">
-                        <div id="bar" class="progress-bar" role="progressbar"
-                             aria-valuenow="0" aria-valuemin="0"
+                        <div id="bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
                             aria-valuemax="100"></div>
                     </div>
                     <!-- questions -->
                     <div class="row grid-row">
-                        <div class="container text-center"  id="doneSurvey">
+                        <div class="container text-center" id="doneSurvey">
                             <img src="./check.svg" class="mb-3"></img>
                         </div>
 
-                        <div class="container text-center"  id="regForm">
+                        <div class="container text-center" id="regForm">
                             <form class="text-center" id='formulir'>
                                 <h2>Silahkan isi survei berikut ini</h2>
                                 <div class="tab">Nama Anda
@@ -219,8 +228,7 @@
                                                         id="survey-gender-1" type="radio" name="gender" tabindex="-1"
                                                         value="1" /><label class="survey-select-item-inner"
                                                         for="survey-gender-1">
-                                                        <div id="genderImg" class="survey-select-item-label-picture"
-                                                            >
+                                                        <div id="genderImg" class="survey-select-item-label-picture">
                                                         </div>
                                                     </label></div>
                                                 <div class="survey-select-item gender-2"><input
@@ -228,8 +236,8 @@
                                                         id="survey-gender-2" type="radio" name="gender" tabindex="-1"
                                                         value="2" /><label class="survey-select-item-inner"
                                                         for="survey-gender-2">
-                                                        <div id='genderImg' class="survey-select-item-label-picture"
-                                                            ></div>
+                                                        <div id='genderImg' class="survey-select-item-label-picture">
+                                                        </div>
                                                     </label></div>
                                             </div>
                                         </div>
@@ -272,8 +280,8 @@
                                 </div>
 
                             </form>
-                            <div id="containerButton" >
-                                <div id="contButton" >
+                            <div id="containerButton">
+                                <div id="contButton">
                                     <button type="button" id="prevBtn" onclick="nextPrev(-1)">Kembali</button>
                                     <button type="button" title="Silahkan Mengisi Jawaban diatas sebelum melanjutkan"
                                         id="nextBtn" data-bs-toggle="tooltip" data-bs-placement="top"
@@ -287,7 +295,12 @@
 
                 </div>
             </div>
+
+            <div class="row footer">
+                <div style="text-align: left;">Copyright 2020 All Rights Reserved</div>
+            </div>
         </div>
+
     </div>
     <!-- <form id="logininternet" name="linkLogin" action="https://icms-auth.baktikominfo.id/authentikasi/auth.php"
         method="POST">
@@ -300,7 +313,7 @@
         method="POST">
         <input id="macInput" type="hidden" name="mac" value="$(mac)" />
         <input id="ipInput" type="hidden" name="ip" value="$(mac)" />
-        <input id="userInput" type="hidden" name="username"  />
+        <input id="userInput" type="hidden" name="username" />
         <input id="linkLoginInput" type="hidden" name="link-login" value="$(link-login)" />
         <input id="linkOrigInput" type="hidden" name="link-orig" value="$(link-orig)" />
         <input id="linkLoginOnlyInput" type="hidden" name="link-login-only" value="$(link-login-only)" />
@@ -309,6 +322,7 @@
     <input type="hidden" id="mac" value="$(mac)">
     <input type="hidden" id="ipLocal" value="$(ip)">
 </body>
+
 </html>
 
 
