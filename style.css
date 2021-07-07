@@ -70,8 +70,7 @@
   margin-right: auto;
   display: block;
 }
-#bannerbutton{
-  
+#bannerbutton {
 }
 .survey-form-gender.show {
   opacity: 1;
@@ -210,12 +209,12 @@ body {
 }
 
 ::-webkit-input-placeholder {
-  text-align: center;
+  /* text-align: center; */
 }
 
 :-moz-placeholder {
   /* Firefox 18- */
-  text-align: center;
+  /* text-align: center; */
 }
 
 ::-moz-placeholder {
@@ -253,22 +252,23 @@ h1 {
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
-input[type=number] {
-    -moz-appearance:textfield; /* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
 }
+
 input {
   padding: 10px;
   width: 100%;
   font-size: 17px;
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  margin-bottom: 5px;
+  border-top: 1px;
+  border-left: 1px;
+  border-right: 1px;
+  margin-bottom: 15px;
 }
 
 /* Mark input boxes that gets an error on validation: */
@@ -298,8 +298,8 @@ button {
 a {
   cursor: pointer;
 }
-#bannerButton{
-  background: #E2B674;
+#bannerButton {
+  background: #e2b674;
   color: #fff;
   text-decoration: none;
   -webkit-border-radius: 5px;
@@ -310,8 +310,8 @@ a {
   border-radius: 7.5px;
   border-bottom-right-radius: 25px;
 }
-#beritaButton{
-  background: #C18ECE;
+#beritaButton {
+  background: #c18ece;
   color: #fff;
   text-decoration: none;
   -webkit-border-radius: 5px;

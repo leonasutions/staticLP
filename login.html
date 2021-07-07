@@ -101,24 +101,39 @@
                         hubungi (081231116525)</p>
                     <br />
                     <p style="text-align: center;">Silakan Kirim Pertanyaan Anda</p>
-                    <div class="alert alert-success" id="success-alert" style="display:none" role="alert">Data ticket berhasil di kirim</div>
-                        
+                    <div class="alert alert-success" id="success-alert" style="display:none" role="alert">Data ticket
+                        berhasil di kirim</div>
+
                     <form>
-                        <input placeholder="Nama" id="nama" name="nama">
-                        <input type="number" placeholder="Nomor Telepon" id="notelp" name="notelp">
-                        <input type="email" placeholder="Email" id="email" name="email">
-                        <select style="margin-bottom: 5px;" class="form-select" id="kategori" name="kategori" >
-                            <option value="" selected disabled hidden>Kategori</option>
-                            <option value="Konten"  >Konten</option>
-                            <option value="Data"  >Data</option>
-                            <option value="Akses Internet"  >Akses Internet</option>
-                            <option value="Umum"  >Umum</option>
-                        </select>
-                        <textarea style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 86px;width: 100%;" placeholder="Pesan" id="pesan" name="pesan"></textarea>
-                        <br />
-                        <br />
-                        <button id="submitHubungi">Kirim</button>
-                        
+                        <div class="form-group">
+                            <label> Nama Anda </label>
+                            <input class="form-control" placeholder="Ketik Disini" id="nama" name="nama">
+                        </div>
+
+                        <div class="form-group">
+                            <label> Nomor Telepon</label>
+                            <input class="form-control" type="number" placeholder="Contoh: (0856936985224)" id="notelp"
+                                name="notelp">
+                        </div>
+
+                        <div class="form-group">
+                            <label> Email </label>
+                            <input class="form-control" type="email" placeholder="Contoh: test@email.com" id="email"
+                                name="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label> Pesan </label>
+                            <textarea class="form-control"
+                                style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 86px;width: 100%;"
+                                placeholder="Tulis Pesan anda disini" id="pesan" name="pesan"></textarea>
+                        </div>
+
+
+                        <div style="display: flex; align-items: center; justify-content: center; margin-top:10px">
+                            <button id="submitHubungi" style="fle">Kirim</button>
+                        </div>
+
                     </form>
 
                 </div>
