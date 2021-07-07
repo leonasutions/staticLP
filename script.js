@@ -250,7 +250,7 @@ function getJadwal() {
       survey = data.survey;
       //   console.log(document.getElementById("mac").value);
       if (demo && survey) {
-        elem.hidden=true
+        elem.hidden = true;
         hubungButon.hidden = false;
         $("#bar").css("width", 100 + "%");
         $(`#doneSurvey`).append(
@@ -269,7 +269,7 @@ function getJadwal() {
             clearTimeout(timerId);
             elem.hidden = "true";
             hubungButon.hidden = false;
-            konekInternet();
+            // konekInternet();
           } else {
             elem.innerHTML =
               "Anda akan terhubung ke internet setelah " +
@@ -329,7 +329,7 @@ function getJadwal() {
             clearTimeout(timerId);
             elem.hidden = "true";
             hubungButon.hidden = false;
-            konekInternet();
+            // konekInternet();
           } else {
             elem.innerHTML =
               "Anda akan terhubung ke internet setelah " +
@@ -493,7 +493,7 @@ function nextPrev(n) {
     $("#doneSurvey").css("display", "block");
     document.getElementById("hubungButton").disabled = false;
     var elem = document.getElementById("textCountdown");
-    elem.hidden=true
+    elem.hidden = true;
     document.getElementById("hubungButton").hidden = false;
     return false;
   }
@@ -555,3 +555,77 @@ function konekInternet() {
   $("#passwordInput").val(encryptedPassword);
   form.submit();
 }
+$("#submitHubungi").click(function (event) {
+  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  let $this = $(this);
+  event.preventDefault();
+  if (
+    $("#nama").val().trim() === "" ||
+    $("#notelp").val().trim() === "" ||
+    $("#email").val().trim() === "" ||
+    $("#pesan").val().trim() === "" ||
+    $("#kategori").find(":selected").val() === ""
+  ) {
+    $this.tooltip({
+      title: "Silahkan lengkapi form di atas sebelum melanjutkan",
+      placement: "top",
+      trigger: "manual",
+    });
+    $this.tooltip("show");
+    setTimeout(() => {
+      $this.tooltip("hide");
+    }, 1000);
+  } else if ($("#notelp").val().length < 10 || $("#notelp").val().length > 13) {
+    $this.tooltip("dispose");
+    $this.tooltip({
+      title: "Silahkan lengkapi form telepon dengan benar",
+      placement: "top",
+      trigger: "manual",
+    });
+    $this.tooltip("show");
+    setTimeout(() => {
+      $this.tooltip("hide");
+    }, 1000);
+  } else if (!$("#email").val().match(re)) {
+    $this.tooltip("dispose");
+    $this.tooltip({
+      title: "Silahkan lengkapi form email dengan benar",
+      placement: "top",
+      trigger: "manual",
+    });
+    $this.tooltip("show");
+    setTimeout(() => {
+      $this.tooltip("hide");
+    }, 1000);
+  } else {
+    const data = {
+      name: $("#nama").val().trim(),
+      phone: $("#notelp").val().trim(),
+      email: $("#email").val().trim(),
+      message: $("#pesan").val().trim(),
+      kategori: $("#kategori").val(),
+    };
+    $.ajax({
+      type: "POST",
+      contentType: "application/json",
+      url: url + "ticketing",
+      data: JSON.stringify(data),
+      dataType: "json",
+      success: function () {
+        $("#nama").val("");
+        $("#notelp").val("");
+        $("#email").val("");
+        $("#pesan").val("");
+        $("#success-alert")
+          .fadeTo(2000, 500)
+          .slideUp(500, function () {
+            $("#success-alert").slideUp(500);
+          });
+      },
+      error: function (request, status, error) {
+        alert(error);
+        // $(".demoName").text("Halo, " + $("#survey-q1-input").val())
+      },
+    });
+  }
+});

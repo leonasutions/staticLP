@@ -49,6 +49,7 @@
 #textSelamat {
   color: #00438b;
 }
+
 #textInfo {
   color: #3a3a3a;
 }
@@ -68,6 +69,9 @@
   margin-left: auto;
   margin-right: auto;
   display: block;
+}
+#bannerbutton{
+  
 }
 .survey-form-gender.show {
   opacity: 1;
@@ -247,14 +251,24 @@ body {
 h1 {
   text-align: center;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
 
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}
 input {
   padding: 10px;
   width: 100%;
   font-size: 17px;
-  border-top: black 1px;
-  border-left: black 1px;
-  border-right: black 1px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  margin-bottom: 5px;
 }
 
 /* Mark input boxes that gets an error on validation: */
@@ -284,7 +298,30 @@ button {
 a {
   cursor: pointer;
 }
-
+#bannerButton{
+  background: #E2B674;
+  color: #fff;
+  text-decoration: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  height: 60px;
+  display: inline-block;
+  border-radius: 7.5px;
+  border-bottom-right-radius: 25px;
+}
+#beritaButton{
+  background: #C18ECE;
+  color: #fff;
+  text-decoration: none;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  height: 60px;
+  display: inline-block;
+  border-radius: 7.5px;
+  border-bottom-right-radius: 25px;
+}
 .button {
   background: #8cc6c9;
   color: #fff;

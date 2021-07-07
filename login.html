@@ -85,6 +85,45 @@
             </div>
         </div>
     </div>
+    <!-- modal Hubungi Kami -->
+    <div class="modal fade" id="modalHubungi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="beritaBody">
+                    <br />
+                    <h2 style="text-align: center;color: #00438b;">Hubungi Kami</h2>
+                    <br />
+                    <p style="text-align: center;">Silahkan isi pertanyaan anda pada formulir dibawah ini atau
+                        hubungi (081231116525)</p>
+                    <br />
+                    <p style="text-align: center;">Silakan Kirim Pertanyaan Anda</p>
+                    <div class="alert alert-success" id="success-alert" style="display:none" role="alert">Data ticket berhasil di kirim</div>
+                        <button id="submitHubungi">Kirim</button>
+                    <form>
+                        <input placeholder="Nama" id="nama" name="nama">
+                        <input type="number" placeholder="Nomor Telepon" id="notelp" name="notelp">
+                        <input type="email" placeholder="Email" id="email" name="email">
+                        <select style="margin-bottom: 5px;" class="form-select" id="kategori" name="kategori" >
+                            <option value="" selected disabled hidden>Kategori</option>
+                            <option value="Konten"  >Konten</option>
+                            <option value="Data"  >Data</option>
+                            <option value="Akses Internet"  >Akses Internet</option>
+                            <option value="Umum"  >Umum</option>
+                        </select>
+                        <textarea style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 86px;width: 100%;" placeholder="Pesan" id="pesan" name="pesan"></textarea>
+                        <br />
+                        <br />
+                        
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Content -->
     <div class="panel">
         <div id="gridcontainer">
@@ -100,9 +139,13 @@
                 </div>
                 <!-- Hubungi Kami -->
                 <div class="col-sm-4 ">
-                    <u id="hubungiKami" style="float: right; padding-right: 10px;">
-                        Hubungi Kami
-                    </u>
+                    <a id="hubungiKami" style="float: right; padding-right: 10px;" onClick="reply_click(this.id)"
+                        data-bs-toggle="modal" data-bs-target="#modalHubungi">
+                        <u id="hubungiKami">
+                            Hubungi Kami
+                        </u>
+                    </a>
+
                 </div>
             </div>
             <div class="row grid-row ">
