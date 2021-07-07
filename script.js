@@ -198,7 +198,7 @@ function reply_click(clicked_id) {
     $("#asd").text(sch.news.title);
     $("#sinopsisBerita").text(sch.news.sinopsis);
     var domain = new URL(sch.news.link);
-    $("#sumber").text(domain.hostname.split(".")[1]);
+    $("#sumber").text('sumber : '+domain.hostname.split(".")[1]);
     var image = $("#imageBerita").attr("src");
     if (image != url + sch.news.details.url) {
       $("#imageBerita").attr("src", url + sch.news.details.url);
@@ -269,7 +269,9 @@ function getJadwal() {
             clearTimeout(timerId);
             elem.hidden = "true";
             hubungButon.hidden = false;
+            hubungButon.disabled = false;
             // konekInternet();
+
           } else {
             elem.innerHTML =
               "Anda akan terhubung ke internet setelah " +
@@ -329,6 +331,8 @@ function getJadwal() {
             clearTimeout(timerId);
             elem.hidden = "true";
             hubungButon.hidden = false;
+            hubungButon.disabled = false;
+
             // konekInternet();
           } else {
             elem.innerHTML =
