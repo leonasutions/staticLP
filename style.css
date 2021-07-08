@@ -6,6 +6,11 @@
 .modal-header {
   border-bottom: none;
 }
+
+#hubungi-kami-mobile {
+  display: none;
+}
+
 #closeButtonVideo {
   opacity: 1;
 }
@@ -122,48 +127,6 @@
   -moz-transition: border-color 500ms, transform 500ms;
   -ms-transition: border-color 500ms, transform 500ms;
   -o-transition: border-color 500ms, transform 500ms;
-}
-
-@media (max-width: 1226px) {
-  .survey-select-item {
-    margin-left: 3%;
-  }
-}
-
-@media (max-width: 662px) {
-  .survey-select-item {
-    margin-top: 0;
-  }
-}
-
-@media (min-width: 330px) {
-  .survey-select-item
-    .survey-select-item-inner
-    .survey-select-item-label-picture {
-    width: 75px;
-    height: 75px;
-    background-size: 90px;
-  }
-}
-
-@media (min-width: 385px) {
-  .survey-select-item
-    .survey-select-item-inner
-    .survey-select-item-label-picture {
-    width: 100px;
-    height: 100px;
-    background-size: 100px;
-  }
-}
-
-@media (min-width: 768px) {
-  .survey-select-item
-    .survey-select-item-inner
-    .survey-select-item-label-picture {
-    width: 150px;
-    height: 150px;
-    background-size: 100px;
-  }
 }
 
 .survey-select-item.gender-1
@@ -372,4 +335,153 @@ img {
   border-top: 1px solid black;
   width: 100%;
   margin-top: 100px;
+}
+
+/* ========================== media screen ================================*/
+
+@media (max-width: 1226px) {
+  #hubungi-kami-mobile {
+    display: none;
+  }
+
+  #hubungiKami {
+    display: block;
+    float: right;
+  }
+
+  .survey-select-item {
+    margin-left: 3%;
+  }
+}
+
+@media (max-width: 662px) {
+  #hubungiKami {
+    display: block;
+    float: right;
+  }
+
+  #hubungi-kami-mobile {
+    display: none;
+  }
+
+  .survey-select-item {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 329px) {
+  #logo-bakti-online {
+    width: 50%;
+  }
+
+  #hubungi-kami-mobile {
+    display: block;
+    float: right;
+    width: 100%;
+  }
+
+  #hubungiKami {
+    display: none;
+  }
+
+  .survey-select-item
+    .survey-select-item-inner
+    .survey-select-item-label-picture {
+    width: 75px;
+    height: 75px;
+    background-size: 90px;
+  }
+}
+
+@media (min-width: 330px) {
+  #logo-bakti-online {
+    width: 50%;
+  }
+
+  #hubungi-kami-mobile {
+    display: block;
+    float: right;
+    width: 100%;
+  }
+
+  #hubungiKami {
+    display: none;
+  }
+
+  .survey-select-item
+    .survey-select-item-inner
+    .survey-select-item-label-picture {
+    width: 75px;
+    height: 75px;
+    background-size: 90px;
+  }
+}
+
+@media (min-width: 385px) {
+  .progress {
+    display: none;
+  }
+
+  #hubungiKami {
+    display: none;
+  }
+
+  #hubungi-kami-mobile {
+    display: block;
+    float: right;
+  }
+
+  #logo-bakti-online {
+    width: 50%;
+  }
+
+  .survey-select-item
+    .survey-select-item-inner
+    .survey-select-item-label-picture {
+    width: 100px;
+    height: 100px;
+    background-size: 100px;
+  }
+}
+
+@media (min-width: 576px) {
+  .progress {
+    display: block;
+  }
+
+  #hubungiKami {
+    display: block;
+    float: right;
+  }
+
+  #hubungi-kami-mobile {
+    display: none;
+  }
+
+  #logo-bakti-online {
+    width: 75%;
+  }
+}
+
+@media (min-width: 768px) {
+  #hubungiKami {
+    display: block;
+    float: right;
+  }
+
+  #hubungi-kami-mobile {
+    display: none;
+  }
+
+  #logo-bakti-online {
+    width: 50%;
+  }
+
+  .survey-select-item
+    .survey-select-item-inner
+    .survey-select-item-label-picture {
+    width: 150px;
+    height: 150px;
+    background-size: 100px;
+  }
 }

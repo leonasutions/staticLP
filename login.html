@@ -129,7 +129,7 @@
 
 
                         <div style="display: flex; align-items: center; justify-content: center; margin-top:10px">
-                            <button id="submitHubungi" style="fle">Kirim</button>
+                            <button id="submitHubungi">Kirim</button>
                         </div>
 
                     </form>
@@ -143,19 +143,27 @@
         <div id="gridcontainer">
             <div class="row grid-row">
                 <!-- Logo -->
-                <div class="col-sm-4">
-                    <img src="./logo.png" />
+                <div class="col-md-4 col-sm-4 col-xs-2">
+                    <img id="logo-bakti-online" src="./logo.png" />
                 </div>
-                <div class="col-sm-4">
+                <div class="col-md-2 col-sm-2 col-xs-2" id="hubungi-kami-mobile" style="float: right;">
+                    <a style="float: right; padding-right: 10px;" onClick="reply_click(this.id)" data-bs-toggle="modal"
+                        data-bs-target="#modalHubungi">
+                        <u>
+                            Hubungi Kami
+                        </u>
+                    </a>
+                </div>
+                <div class="cold-md-4 col-sm-4">
                     <div class="alert alert-danger" style="text-align: center;">
                         JANGAN TUTUP HALAMAN INI
                     </div>
                 </div>
                 <!-- Hubungi Kami -->
-                <div class="col-sm-4 ">
+                <div class="cold-md-4 col-sm-4">
                     <a id="hubungiKami" style="float: right; padding-right: 10px;" onClick="reply_click(this.id)"
                         data-bs-toggle="modal" data-bs-target="#modalHubungi">
-                        <u id="hubungiKami">
+                        <u>
                             Hubungi Kami
                         </u>
                     </a>
