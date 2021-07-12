@@ -22,7 +22,8 @@
     <script src="https://lp-staging.devlabs.id/assets/global/jquery.min.js"></script>
     <script src="https://lp-staging.devlabs.id/assets/global/client.min.js"></script>
     <script src="https://lp-staging.devlabs.id/assets/global/md5.js"></script>
-    <link rel="stylesheet" href="https://lp-staging.devlabs.id/assets/global/style.css">
+    <!-- <link rel="stylesheet" href="https://lp-staging.devlabs.id/assets/global/style.css"> -->
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -35,7 +36,8 @@
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body item-align-center">
-                    <img id="imageBanner" class="img-fluid" src="https://lp-staging.devlabs.id/assets/global/loading.svg">
+                    <img id="imageBanner" class="img-fluid"
+                        src="https://lp-staging.devlabs.id/assets/global/loading.svg">
                 </div>
             </div>
         </div>
@@ -80,7 +82,8 @@
                     <br />
                     <p style="text-align: center;"></p>
                     <p style="text-align: center;"></p>
-                    <img id="imageBerita" class="img-fluid" src="https://lp-staging.devlabs.id/assets/global/loading.svg">
+                    <img id="imageBerita" class="img-fluid"
+                        src="https://lp-staging.devlabs.id/assets/global/loading.svg">
                     <br />
                     <p class="px-5" id="sinopsisBerita"></p>
                     <p id="textSumber" class="px-5"><b id="sumber"></b> </p>
@@ -149,7 +152,8 @@
             <div class="row grid-row">
                 <!-- Logo -->
                 <div class="col-md-4 col-sm-4 col-xs-2">
-                    <img id="logo-bakti-online" src="https://lp-staging.devlabs.id/assets/global/logo.png" style="float:left" />
+                    <img id="logo-bakti-online" src="https://lp-staging.devlabs.id/assets/global/logo.png"
+                        style="float:left" />
                     <a id="hubungi-kami-mobile" style="float: right; width: 30%;" onClick="reply_click(this.id)"
                         data-bs-toggle="modal" data-bs-target="#modalHubungi">
                         <u style="text-align: right;">
@@ -165,7 +169,7 @@
                     </div>
                 </div>
                 <!-- Hubungi Kami -->
-                <div class="cold-md-4 col-sm-4">
+                <div id="box-hubungi-kami" class="cold-md-4 col-sm-4">
                     <a id="hubungiKami" style="float: right; padding-right: 10px;" onClick="reply_click(this.id)"
                         data-bs-toggle="modal" data-bs-target="#modalHubungi">
                         <u>
@@ -192,57 +196,65 @@
                         </div>
                     </div>
                     <!-- button internet -->
-                    <div class="row  grid-row ">
-                        <div class="col-sm-11  m-2 ">
+                    <div class="row grid-row ">
+                        <div class="col-sm-12 ">
                             <div>
                                 <h6 id="textCountdown">Anda akan terhubung ke internet setelah 45 detik, atau selesaikan
                                     survey dan klik tombol hubungkan ke internet</h>
                             </div>
-                            <div><button class="btn btn-primary" id='hubungButton' onclick="konekInternet()"
+                            <div>
+                                <button class="btn btn-primary" id='hubungButton' onclick="konekInternet()"
                                     disabled='true' type="button">Hubungkan ke
-                                    Internet</button></div>
+                                    Internet</button>
+                            </div>
                         </div>
                     </div>
                     <!-- button Content -->
-                    <div class="row  m-2 grid-row">
-                        <!-- button Video -->
-                        <a id="videoButton" onClick="reply_click(this.id)" class="button" data-bs-toggle="modal"
-                            data-bs-target="#modalVideo">
-                            <div class="center">
-                                <img src="https://lp-staging.devlabs.id/assets/global/video.svg" />
-                                <div class="btnText">
-                                    Video
-                                    <span id="judulVideo">Judul Video</span>
+                    <div class="row grid-row">
+                        <div class="row">
+                            <!-- button Video -->
+                            <a id="videoButton" onClick="reply_click(this.id)" class="button" data-bs-toggle="modal"
+                                data-bs-target="#modalVideo">
+                                <div class="center">
+                                    <img src="https://lp-staging.devlabs.id/assets/global/video.svg" />
+                                    <div class="btnText">
+                                        Video
+                                        <span id="judulVideo">Judul Video</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
 
                     <!-- button Banner -->
-                    <div class="row  m-2 grid-row">
-                        <a id="bannerButton" onClick="reply_click(this.id)" class="button" data-bs-toggle="modal"
-                            data-bs-target="#modalBanner">
-                            <div class="center">
-                                <img src="https://lp-staging.devlabs.id/assets/global/banner.svg" />
-                                <div class="btnText">
-                                    Banner
-                                    <span id="judulBanner">Judul Banner</span>
+                    <div class="row grid-row">
+                        <div class="row">
+                            <a id="bannerButton" onClick="reply_click(this.id)" class="button" data-bs-toggle="modal"
+                                data-bs-target="#modalBanner">
+                                <div class="center">
+                                    <img src="https://lp-staging.devlabs.id/assets/global/banner.svg" />
+                                    <div class="btnText">
+                                        Banner
+                                        <span id="judulBanner">Judul Banner</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
                     <!-- button News -->
-                    <div class="row m-2 grid-row">
-                        <a id="beritaButton" onClick="reply_click(this.id)" class="button" data-bs-toggle="modal"
-                            data-bs-target="#modalBerita">
-                            <div class="center">
-                                <img src="https://lp-staging.devlabs.id/assets/global/berita.svg" />
-                                <div class="btnText">
-                                    Berita
-                                    <span id="judulBerita">Judul Berita</span>
+                    <div class="row grid-row">
+                        <div class="row">
+                            <a id="beritaButton" onClick="reply_click(this.id)" class="button" data-bs-toggle="modal"
+                                data-bs-target="#modalBerita">
+                                <div class="center">
+                                    <img src="https://lp-staging.devlabs.id/assets/global/berita.svg" />
+                                    <div class="btnText">
+                                        Berita
+                                        <span id="judulBerita">Judul Berita</span>
+                                    </div>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -292,22 +304,24 @@
                                     <div class="survey-form-gender show pr-3 pl-3 survey-page-content" data-survey="4">
                                         <div class="survey-page-inner">
                                             <div class="survey-q-select d-flex justify-content-center">
-                                                <div class="survey-select-item gender-1"><input
-                                                        class="survey-gender-1 survey-gender-input input-check-3"
+                                                <div class="survey-select-item gender-1">
+                                                    <input class="survey-gender-1 survey-gender-input input-check-3"
                                                         id="survey-gender-1" type="radio" name="gender" tabindex="-1"
-                                                        value="1" /><label class="survey-select-item-inner"
-                                                        for="survey-gender-1">
+                                                        value="1" />
+                                                    <label class="survey-select-item-inner" for="survey-gender-1">
                                                         <div id="genderImg" class="survey-select-item-label-picture">
                                                         </div>
-                                                    </label></div>
-                                                <div class="survey-select-item gender-2"><input
-                                                        class="survey-gender-1 survey-gender-input input-check-3"
+                                                    </label>
+                                                </div>
+                                                <div class="survey-select-item gender-2">
+                                                    <input class="survey-gender-1 survey-gender-input input-check-3"
                                                         id="survey-gender-2" type="radio" name="gender" tabindex="-1"
-                                                        value="2" /><label class="survey-select-item-inner"
-                                                        for="survey-gender-2">
+                                                        value="2" />
+                                                    <label class="survey-select-item-inner" for="survey-gender-2">
                                                         <div id='genderImg' class="survey-select-item-label-picture">
                                                         </div>
-                                                    </label></div>
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -395,4 +409,5 @@
 </html>
 
 
-<script type="text/javascript" src="https://lp-staging.devlabs.id/assets/global/script.js"></script>
+<!-- <script type="text/javascript" src="https://lp-staging.devlabs.id/assets/global/script.js"></script> -->
+<script type="text/javascript" src="./script.js"></script>

@@ -51,7 +51,8 @@
   margin-right: 5vh;
   margin-bottom: 4vh;
 }
-#textSelamat {
+
+h1#textSelamat {
   color: #00438b;
 }
 
@@ -210,9 +211,6 @@ body {
   min-height: 300px;
 }
 
-h1 {
-  text-align: center;
-}
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   /* display: none; <- Crashes Chrome on hover */
@@ -325,7 +323,7 @@ img {
 }
 
 .grid-row > div {
-  /* border: 1px solid lightgrey; */
+  border: 1px solid lightgrey;
   padding: 10px;
   /* background-color: aliceblue; */
   margin: 2px 0;
@@ -339,6 +337,7 @@ img {
 
 /* ========================== media screen ================================*/
 
+/* DESKTOP */
 @media (max-width: 1226px) {
   #hubungi-kami-mobile {
     display: none;
@@ -354,7 +353,23 @@ img {
   }
 }
 
+/* DESKTOP */
 @media (max-width: 662px) {
+  h1#textSelamat {
+    text-align: left;
+  }
+
+  #prevBtn {
+    margin-bottom: 10px;
+  }
+
+  .grid-row > div {
+    /* border: 1px solid lightgrey; */
+    padding: 5px;
+    /* background-color: aliceblue; */
+    margin: 2px 0;
+  }
+
   #hubungiKami {
     display: block;
     float: right;
@@ -369,7 +384,27 @@ img {
   }
 }
 
+/* MOBILE */
 @media (max-width: 329px) {
+  h1#textSelamat {
+    text-align: left;
+  }
+
+  #prevBtn {
+    margin-bottom: 10px;
+  }
+
+  #regForm {
+    width: 90%;
+  }
+
+  .grid-row > div {
+    /* border: 1px solid lightgrey; */
+    padding: 5px;
+    /* background-color: aliceblue; */
+    margin: 2px 0;
+  }
+
   #logo-bakti-online {
     width: 50%;
   }
@@ -380,7 +415,8 @@ img {
     width: 100%;
   }
 
-  #hubungiKami {
+  #hubungiKami,
+  #box-hubungi-kami {
     display: none;
   }
 
@@ -393,7 +429,20 @@ img {
   }
 }
 
+/* MOBILE */
 @media (min-width: 330px) {
+  h1#textSelamat {
+    text-align: left;
+  }
+
+  #regForm {
+    width: 90%;
+  }
+
+  #prevBtn {
+    margin-bottom: 10px;
+  }
+
   #logo-bakti-online {
     width: 50%;
   }
@@ -404,7 +453,8 @@ img {
     width: 100%;
   }
 
-  #hubungiKami {
+  #hubungiKami,
+  #box-hubungi-kami {
     display: none;
   }
 
@@ -417,12 +467,26 @@ img {
   }
 }
 
+/* MOBILE */
 @media (min-width: 385px) {
+  h1#textSelamat {
+    text-align: left;
+  }
+
+  #regForm {
+    width: 90%;
+  }
+
+  #prevBtn {
+    margin-bottom: 10px;
+  }
+
   .progress {
     display: none;
   }
 
-  #hubungiKami {
+  #hubungiKami,
+  #box-hubungi-kami {
     display: none;
   }
 
@@ -444,7 +508,20 @@ img {
   }
 }
 
+/* MOBILE */
 @media (min-width: 576px) {
+  h1#textSelamat {
+    text-align: left;
+  }
+
+  #prevBtn {
+    margin-bottom: 10px;
+  }
+
+  #regForm {
+    width: 90%;
+  }
+
   .progress {
     display: block;
   }
