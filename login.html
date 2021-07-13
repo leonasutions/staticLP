@@ -147,8 +147,8 @@
         </div>
     </div>
     <!-- Content -->
-    <div class="panel">
-        <div id="gridcontainer">
+    <div class="panel ">
+        <div id="gridcontainer" class="mobile-background">
             <div class="row grid-row">
                 <!-- Logo -->
                 <div class="col-md-4 col-sm-4 col-xs-2">
@@ -179,17 +179,17 @@
 
                 </div>
             </div>
-            <div class="row grid-row ">
+            <div class="row grid-row">
                 <div class="col-sm-6">
                     <!-- Tulisan Selamat Datang -->
                     <div class="row grid-row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-12 col-md-10 col-xs-12">
                             <h1 id='textSelamat'>Selamat Datang,</h1>
                         </div>
                     </div>
                     <!-- Tulisan Body -->
                     <div class="row grid-row">
-                        <div class="col-sm-12" id="textInfo">
+                        <div class="col-sm-12 col-md-10 col-xs-12" id="textInfo">
                             Silahkan mengisi Survey terlebih dahulu untuk mendapatkan
                             akses internet, dan pilih konten dibawah untuk mendapatkan
                             informasi terkini.
@@ -197,7 +197,7 @@
                     </div>
                     <!-- button internet -->
                     <div class="row grid-row ">
-                        <div class="col-sm-12 ">
+                        <div class="col-sm-12 col-md-10 col-xs-12">
                             <div>
                                 <h6 id="textCountdown">Anda akan terhubung ke internet setelah 45 detik, atau selesaikan
                                     survey dan klik tombol hubungkan ke internet</h>
@@ -211,7 +211,7 @@
                     </div>
                     <!-- button Content -->
                     <div class="row grid-row">
-                        <div class="row">
+                        <div class="col-md-10 col-sm-12 col-xs-12">
                             <!-- button Video -->
                             <a id="videoButton" onClick="reply_click(this.id)" class="button" data-bs-toggle="modal"
                                 data-bs-target="#modalVideo">
@@ -228,7 +228,7 @@
 
                     <!-- button Banner -->
                     <div class="row grid-row">
-                        <div class="row">
+                        <div class="col-md-10 col-sm-12 col-xs-12">
                             <a id="bannerButton" onClick="reply_click(this.id)" class="button" data-bs-toggle="modal"
                                 data-bs-target="#modalBanner">
                                 <div class="center">
@@ -241,12 +241,14 @@
                             </a>
                         </div>
                     </div>
+
                     <!-- button News -->
                     <div class="row grid-row">
-                        <div class="row">
+                        <div class="col-md-10 col-sm-12 col-xs-12">
                             <a id="beritaButton" onClick="reply_click(this.id)" class="button" data-bs-toggle="modal"
                                 data-bs-target="#modalBerita">
                                 <div class="center">
+
                                     <img src="https://lp-staging.devlabs.id/assets/global/berita.svg" />
                                     <div class="btnText">
                                         Berita
@@ -261,7 +263,7 @@
                 <!-- Survey -->
                 <div class="col-sm-6">
                     <!-- progress -->
-                    <div class="row m-2 grid-row">
+                    <div class="row m-2 grid-row progress-text">
                         <div class="col-sm-1 text-center" id="textCount">-</div>
                         <div class="col-sm-10 text-center">Progress</div>
                     </div>
@@ -278,29 +280,41 @@
                         <div class="container text-center" id="regForm">
                             <form class="text-center" id='formulir'>
                                 <h2>Silahkan isi survei berikut</h2>
-                                <div class="tab">Nama Anda
+
+                                <div class="tab">
+                                    Nama Anda
                                     <p><input placeholder="Nama Depan" oninput="this.className = ''" id="survey-0-1"
                                             name="fname"></p>
                                     <p><input placeholder="Nama Belakang" oninput="this.className = ''" id="survey-0-1"
                                             name="lname"></p>
                                 </div>
-                                <div class="tab">Tanggal Lahir Anda
-                                    <div class="input-group mb-3">
-                                        <!-- <label class="input-group-text" for="daysDropdown">Hari</label> -->
-                                        <select class="form-select" name="tanggal" id="daysDropdown">
-                                            <option value="" selected disabled hidden>Tanggal</option>
-                                        </select>
-                                        <!-- <label class="input-group-text"  for="monthsDropdown">Bulan</label> -->
-                                        <select class="form-select" name="bulan" id="monthsDropdown">
-                                            <option value="" selected disabled hidden>Bulan</option>
-                                        </select>
-                                        <!-- <label class="input-group-text"  for="yearsDropdown">Tahun</label> -->
-                                        <select class="form-select" name="tahun" id="yearsDropdown">
-                                            <option value="" selected disabled hidden>Tahun</option>
-                                        </select>
+                                <div class="tab">
+                                    Tanggal Lahir Anda
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <!-- <label class="input-group-text" for="daysDropdown">Hari</label> -->
+                                            <select class="form-select" name="tanggal" id="daysDropdown">
+                                                <option value="" selected disabled hidden>Tanggal</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <!-- <label class="input-group-text"  for="monthsDropdown">Bulan</label> -->
+                                            <select class="form-select" name="bulan" id="monthsDropdown">
+                                                <option value="" selected disabled hidden>Bulan</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <!-- <label class="input-group-text"  for="yearsDropdown">Tahun</label> -->
+                                            <select class="form-select" name="tahun" id="yearsDropdown">
+                                                <option value="" selected disabled hidden>Tahun</option>
+                                            </select>
+                                        </div>
+
                                     </div>
+
                                 </div>
-                                <div class="tab">Jenis Kelamin Anda
+                                <div class="tab">
+                                    Jenis Kelamin Anda
                                     <div class="survey-form-gender show pr-3 pl-3 survey-page-content" data-survey="4">
                                         <div class="survey-page-inner">
                                             <div class="survey-q-select d-flex justify-content-center">
@@ -326,8 +340,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tab">Jenjang Pendidikan Terakhir<br />
-                                    <div class="form-check form-check-inline">
+                                <div class="tab" style="text-align: left;">Jenjang Pendidikan Terakhir<br />
+
+                                    <div class="form-check form-check-inline" style="text-align: left;">
                                         <input class="form-check-input" type="radio" name="education"
                                             id="survey-education-1" value="1">
                                         <label class="form-check-label" for="survey-education-1">SD / Sederajat</label>
@@ -349,7 +364,7 @@
                                             Sederajat</label>
                                     </div>
                                 </div>
-                                <div class="tab">Status Pernikahan<br />
+                                <div class="tab" style="text-align: left;">Status Pernikahan<br />
                                     <div class="form-check form-check-inline">
                                         <input class="form-check-input" type="radio" name="status" id="inlineRadio1"
                                             value="1">

@@ -294,7 +294,7 @@ function getJadwal() {
           counterOpsi = 0;
           if (question.type == "radio") {
             $("#formulir").append(
-              ` <div class='tab' id=${question._id}>${question.question}<br/> </div>`
+              ` <div class='tab' style='text-align:left' id=${question._id}>${question.question}<br/> </div>`
             );
             question.option.forEach((opsi) => {
               $(`#${question._id}`).append(
@@ -307,8 +307,11 @@ function getJadwal() {
             });
           } else if (question.type == "checkbox") {
             $("#formulir").append(
-              ` <div class='tab' id=${question._id}>${question.question}<br/> </div>`
+              ` <div class='tab' style="text-align:left" id=${question._id}>
+                  ${question.question}
+              <br/> </div>`
             );
+
             question.option.forEach((opsi) => {
               $(`#${question._id}`).append(
                 `<div class="form-check">
@@ -351,7 +354,7 @@ function getJadwal() {
           counterOpsi = 0;
           if (question.type == "radio") {
             $("#formulir").append(
-              ` <div class='tab' id=${question._id}>${question.question}<br/> </div>`
+              ` <div class='tab' style="text-align:left" id=${question._id}>${question.question}<br/> </div>`
             );
             question.option.forEach((opsi) => {
               $(`#${question._id}`).append(
@@ -364,7 +367,7 @@ function getJadwal() {
             });
           } else if (question.type == "checkbox") {
             $("#formulir").append(
-              ` <div class='tab' id=${question._id}>${question.question}<br/> </div>`
+              ` <div class='tab' style="text-align:left" id=${question._id}>${question.question}<br/> </div>`
             );
             question.option.forEach((opsi) => {
               $(`#${question._id}`).append(

@@ -54,7 +54,6 @@
 
 h1#textSelamat {
   color: #00438b;
-  text-align: center;
 }
 
 #textInfo {
@@ -77,13 +76,8 @@ h1#textSelamat {
   margin-right: auto;
   display: block;
 }
-
-#bannerButton,
-#videoButton,
-#beritaButton {
-  width: 100%;
+#bannerbutton {
 }
-
 .survey-form-gender.show {
   opacity: 1;
   right: 0%;
@@ -97,15 +91,6 @@ h1#textSelamat {
 
 .survey-gender-1[type="radio"] {
   opacity: 0;
-}
-
-.survey-select-item-inner {
-  padding: 0;
-  margin: 0;
-  border: 1px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .survey-select-item
@@ -205,10 +190,6 @@ body {
   text-align: center;
 }
 
-#formulir {
-  margin-bottom: 10px;
-}
-
 #regForm {
   background-color: #ffffff;
   margin: 15px auto;
@@ -228,12 +209,6 @@ body {
   width: 80%;
   min-width: 250px;
   min-height: 300px;
-}
-
-#daysDropdown,
-#monthsDropdown,
-#yearsDropdown {
-  margin: 5px 0;
 }
 
 input::-webkit-outer-spin-button,
@@ -336,7 +311,6 @@ img {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  width: 100%;
 }
 
 .btnText {
@@ -349,8 +323,8 @@ img {
 }
 
 .grid-row > div {
-  /* border: 1px solid lightgrey; */
-  padding: 5px;
+  border: 1px solid lightgrey;
+  padding: 10px;
   /* background-color: aliceblue; */
   margin: 2px 0;
 }
@@ -364,18 +338,7 @@ img {
 /* ========================== media screen ================================*/
 
 /* ================================================= DESKTOP ================================================================= */
-@media (min-width: 662px) and (max-width: 1226px) {
-  h1#textSelamat {
-    text-align: center;
-  }
-
-  .grid-row > div {
-    /* border: 1px solid lightgrey; */
-    padding: 10px;
-    /* background-color: aliceblue; */
-    margin: 2px 0;
-  }
-
+@media (max-width: 1226px) {
   #hubungi-kami-mobile {
     display: none;
   }
@@ -383,11 +346,6 @@ img {
   #hubungiKami {
     display: block;
     float: right;
-  }
-
-  .progress,
-  .progress-text {
-    display: block;
   }
 
   .survey-select-item {
@@ -395,14 +353,19 @@ img {
   }
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
+/* DESKTOP */
+@media (max-width: 662px) {
   h1#textSelamat {
-    text-align: center;
+    text-align: left;
+  }
+
+  #prevBtn {
+    margin-bottom: 10px;
   }
 
   .grid-row > div {
     /* border: 1px solid lightgrey; */
-    padding: 10px;
+    padding: 5px;
     /* background-color: aliceblue; */
     margin: 2px 0;
   }
@@ -416,9 +379,19 @@ img {
     display: none;
   }
 
-  .progress,
-  .progress-text {
+  .survey-select-item {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 768px) {
+  #hubungiKami {
     display: block;
+    float: right;
+  }
+
+  #hubungi-kami-mobile {
+    display: none;
   }
 
   #logo-bakti-online {
@@ -434,33 +407,10 @@ img {
   }
 }
 
-/* ===================================================== MOBILE ======================================================== */
-
-/* MOBILE */
-@media (min-width: 100px) and (max-width: 575px) {
-  body {
-    background-image: none;
-    background-color: #eef4f9;
-  }
-
-  .mobile-background {
-    position: absolute;
-    top: 0px;
-    width: 100%;
-    height: 90%;
-    background-color: white;
-    border-radius: 0 0 20px 20px;
-  }
-
+/* DESKTOP */
+@media (min-width: 576px) {
   h1#textSelamat {
     text-align: left;
-  }
-
-  .grid-row > div {
-    /* border: 1px solid lightgrey; */
-    padding: 5px;
-    /* background-color: aliceblue; */
-    margin: 2px 0;
   }
 
   #prevBtn {
@@ -468,12 +418,48 @@ img {
   }
 
   #regForm {
-    width: 95%;
+    width: 90%;
   }
 
-  .progress,
-  .progress-text {
+  #hubungiKami {
+    display: block;
+    float: right;
+  }
+
+  #hubungi-kami-mobile {
     display: none;
+  }
+
+  #logo-bakti-online {
+    width: 75%;
+  }
+}
+
+/* ===================================================== MOBILE ======================================================== */
+
+/* MOBILE */
+@media (max-width: 329px) {
+  h1#textSelamat {
+    text-align: left;
+  }
+
+  #prevBtn {
+    margin-bottom: 10px;
+  }
+
+  #regForm {
+    width: 90%;
+  }
+
+  .progress {
+    display: none;
+  }
+
+  .grid-row > div {
+    /* border: 1px solid lightgrey; */
+    padding: 5px;
+    /* background-color: aliceblue; */
+    margin: 2px 0;
   }
 
   #logo-bakti-online {
@@ -497,5 +483,88 @@ img {
     width: 75px;
     height: 75px;
     background-size: 90px;
+  }
+}
+
+/* MOBILE */
+@media (min-width: 330px) {
+  h1#textSelamat {
+    text-align: left;
+  }
+
+  #regForm {
+    width: 90%;
+  }
+
+  .progress {
+    display: none;
+  }
+
+  #prevBtn {
+    margin-bottom: 10px;
+  }
+
+  #logo-bakti-online {
+    width: 50%;
+  }
+
+  #hubungi-kami-mobile {
+    display: block;
+    float: right;
+    width: 100%;
+  }
+
+  #hubungiKami,
+  #box-hubungi-kami {
+    display: none;
+  }
+
+  .survey-select-item
+    .survey-select-item-inner
+    .survey-select-item-label-picture {
+    width: 75px;
+    height: 75px;
+    background-size: 90px;
+  }
+}
+
+/* MOBILE */
+@media (min-width: 385px) {
+  h1#textSelamat {
+    text-align: left;
+  }
+
+  #regForm {
+    width: 90%;
+  }
+
+  .progress {
+    display: none;
+  }
+
+  #prevBtn {
+    margin-bottom: 10px;
+  }
+
+  #hubungiKami,
+  #box-hubungi-kami {
+    display: none;
+  }
+
+  #hubungi-kami-mobile {
+    display: block;
+    float: right;
+  }
+
+  #logo-bakti-online {
+    width: 50%;
+  }
+
+  .survey-select-item
+    .survey-select-item-inner
+    .survey-select-item-label-picture {
+    width: 100px;
+    height: 100px;
+    background-size: 100px;
   }
 }
