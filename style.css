@@ -45,11 +45,22 @@
 #contButton {
   float: right;
 }
-#genderImg {
+
+#genderImg1 {
   width: 100px;
   height: 100px;
-  margin-right: 5vh;
-  margin-bottom: 4vh;
+  margin-right: 5px;
+  /* margin-right: 5vh;
+  margin-bottom: 4vh; */
+}
+
+#genderImg2 {
+  width: 100px;
+  height: 100px;
+  margin-left: 5px;
+
+  /* margin-right: 5vh;
+  margin-bottom: 4vh; */
 }
 
 h1#textSelamat {
@@ -99,15 +110,6 @@ h1#textSelamat {
   opacity: 0;
 }
 
-.survey-select-item-inner {
-  padding: 0;
-  margin: 0;
-  border: 1px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .survey-select-item
   > input:checked
   + .survey-select-item-inner
@@ -120,14 +122,9 @@ h1#textSelamat {
   transform: scale(1.1);
 }
 
-.survey-select-item .survey-select-item-inner {
-  cursor: pointer;
-}
-
 .survey-select-item
   .survey-select-item-inner
   .survey-select-item-label-picture {
-  margin: auto;
   width: 50px;
   height: 50px;
   border: 3px solid transparent;
@@ -156,6 +153,7 @@ h1#textSelamat {
   .survey-select-item-label-picture {
   background-image: url("https://lp-staging.devlabs.id/assets/global/wanita.svg");
 }
+
 .modal-content {
   background-color: transparent;
   border: none;

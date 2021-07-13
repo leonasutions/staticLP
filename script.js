@@ -359,9 +359,9 @@ function getJadwal() {
             question.option.forEach((opsi) => {
               $(`#${question._id}`).append(
                 `<div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="${question._id}" id="surv-${counterQuestion}-${counterOpsi}" value="${opsi}">
-                        <label class="form-check-label" for="surv-${counterQuestion}-${counterOpsi}">${opsi}</label>
-                    </div>`
+                      <input class="form-check-input" type="radio" name="${question._id}" id="surv-${counterQuestion}-${counterOpsi}" value="${opsi}">
+                      <label class="form-check-label" for="surv-${counterQuestion}-${counterOpsi}">${opsi}</label>
+                  </div>`
               );
               counterOpsi++;
             });
