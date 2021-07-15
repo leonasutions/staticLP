@@ -400,10 +400,11 @@ function getJadwal() {
 var currentTab = 0;
 showTab(currentTab);
 
-var max = new Date().getFullYear();
-var min = max - 80;
+var maxDate = new Date().getFullYear();
+var min = maxDate - 80;
 
-for (var i = max; i >= min; i--) {
+
+for (var i = maxDate; i >= min; i--) {
   $("#yearsDropdown").append($("<option></option>").attr("value", i).text(i));
 }
 
@@ -549,9 +550,25 @@ function validateForm() {
       }
     }
   }
-
-  if (!valid) {
+  var ageValid= true
+  // console.log(output);
+  if(maxDate-parseInt(document.getElementById("yearsDropdown").value)<8){
+    ageValid=false
+    valid=false
+  }
+  if (!valid && !ageValid) {
     var exampleEl = document.getElementById("nextBtn");
+    exampleEl.title="Silahkan isi umur anda minimal 8 tahun"
+    var tooltip = new bootstrap.Tooltip(exampleEl);
+    tooltip.show();
+    setTimeout(function () {
+      tooltip.dispose();
+    }, 2000);
+    
+  }
+  else if(!valid){
+    var exampleEl = document.getElementById("nextBtn");
+    exampleEl.title="Silahkan Mengisi Jawaban diatas sebelum melanjutkan"
     var tooltip = new bootstrap.Tooltip(exampleEl);
     tooltip.show();
     setTimeout(function () {
