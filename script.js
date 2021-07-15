@@ -294,22 +294,24 @@ function getJadwal() {
           counterOpsi = 0;
           if (question.type == "radio") {
             $("#formulir").append(
-              ` <div class='tab' style='text-align:left' id=${question._id}>${question.question}<br/> </div>`
+              ` <div class='tab' style='text-align:left' id=${question._id}>
+                  <p style="text-align: center;">${question.question} </p>
+              </div>`
             );
             question.option.forEach((opsi) => {
               $(`#${question._id}`).append(
-                `<div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="${question._id}" id="surv-${counterQuestion}-${counterOpsi}" value="${opsi}">
-                        <label class="form-check-label" for="surv-${counterQuestion}-${counterOpsi}">${opsi}</label>
-                    </div>`
+                `<div class="form-check">
+                    <input class="form-check-input" type="radio" name="${question._id}" id="surv-${counterQuestion}-${counterOpsi}" value="${opsi}">
+                    <label class="form-check-label" for="surv-${counterQuestion}-${counterOpsi}">${opsi}</label>
+                  </div>`
               );
               counterOpsi++;
             });
           } else if (question.type == "checkbox") {
             $("#formulir").append(
               ` <div class='tab' style="text-align:left" id=${question._id}>
-                  ${question.question}
-              <br/> </div>`
+                  <p style="text-align: center;">${question.question} </p>
+              </div>`
             );
 
             question.option.forEach((opsi) => {
@@ -354,11 +356,13 @@ function getJadwal() {
           counterOpsi = 0;
           if (question.type == "radio") {
             $("#formulir").append(
-              ` <div class='tab' style="text-align:left" id=${question._id}>${question.question}<br/> </div>`
+              ` <div class='tab' style="text-align:left" id=${question._id}>
+                  <p style="text-align: center;">${question.question} </p>
+              </div>`
             );
             question.option.forEach((opsi) => {
               $(`#${question._id}`).append(
-                `<div class="form-check form-check-inline">
+                `<div class="form-check">
                       <input class="form-check-input" type="radio" name="${question._id}" id="surv-${counterQuestion}-${counterOpsi}" value="${opsi}">
                       <label class="form-check-label" for="surv-${counterQuestion}-${counterOpsi}">${opsi}</label>
                   </div>`
@@ -367,7 +371,9 @@ function getJadwal() {
             });
           } else if (question.type == "checkbox") {
             $("#formulir").append(
-              ` <div class='tab' style="text-align:left" id=${question._id}>${question.question}<br/> </div>`
+              ` <div class='tab' style="text-align:left" id=${question._id}>
+                <p style="text-align: center;">${question.question} </p> 
+              </div>`
             );
             question.option.forEach((opsi) => {
               $(`#${question._id}`).append(
