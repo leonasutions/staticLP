@@ -561,11 +561,12 @@ function validateForm() {
   return valid;
 }
 function konekInternet() {
-  var passwordLogin = "baktiaksi";
-  var username = "bakti";
-  var form = document.getElementById("logininternet");
-  $("#userInput").val(username);
-  $("#passwordInput").val(encryptedPassword);
+  // var passwordLogin = "baktiaksi";
+  // var username = "bakti";
+  // $("#userInput").val(username);
+  // $("#passwordInput").val(encryptedPassword);
+  var form = document.getElementById("log");
+
   form.submit();
 }
 $("#submitHubungi").click(function (event) {
@@ -641,4 +642,7 @@ $("#submitHubungi").click(function (event) {
       },
     });
   }
+});
+$("#modalVideo").on("hide.bs.modal", function(e) {
+  $("#videoPlayer").attr("src", "");
 });
