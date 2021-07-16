@@ -28,35 +28,40 @@
 
 <body>
 
-<table hidden="true" width="100%" style="margin-top: 10%;">
-	<tr>
-	<td  valign="middle">
-		<table width="240" height="240" style="border: 1px solid #cccccc; padding: 0px;" cellpadding="0" cellspacing="0">
-			<tr>
-				<td  valign="bottom" height="175" colspan="2">
-					<form name="login" id="log" action="$(link-login-only)" method="post"
-					    >
-						<input type="hidden" name="dst" value="$(link-orig)" />
-						<input type="hidden" name="popup" value="true" />
-						
-							<table width="100" style="background-color: #ffffff">
-								<tr><td >login</td>
-										<td><input style="width: 80px" type="hidden" name="username" type="text" value="bakti"/></td>
-								</tr>
-								<tr><td >parole</td>
-										<td><input style="width: 80px" type="hidden" name="password" value="baktiaksi" type="password"/></td>
-								</tr>
-								<tr><td>&nbsp;</td>
-										<td><input type="submit" value="OK" /></td>
-								</tr>
-							</table>
-					</form>
-				</td>
-			</tr>
-		</table>
-	</td>
-	</tr>
-</table>
+    <table hidden="true" width="100%" style="margin-top: 10%;">
+        <tr>
+            <td valign="middle">
+                <table width="240" height="240" style="border: 1px solid #cccccc; padding: 0px;" cellpadding="0"
+                    cellspacing="0">
+                    <tr>
+                        <td valign="bottom" height="175" colspan="2">
+                            <form name="login" id="log" action="$(link-login-only)" method="post">
+                                <input type="hidden" name="dst" value="$(link-orig)" />
+                                <input type="hidden" name="popup" value="true" />
+
+                                <table width="100" style="background-color: #ffffff">
+                                    <tr>
+                                        <td>login</td>
+                                        <td><input style="width: 80px" type="hidden" name="username" type="text"
+                                                value="bakti" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>parole</td>
+                                        <td><input style="width: 80px" type="hidden" name="password" value="baktiaksi"
+                                                type="password" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td><input type="submit" value="OK" /></td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 
     <!-- modal banner -->
     <div class="modal fade" id="modalBanner" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -78,7 +83,7 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button id="closeButtonVideo"  type="button" class="btn-close btn-close-white"
+                    <button id="closeButtonVideo" type="button" class="btn-close btn-close-white"
                         data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body drdpdown">
@@ -194,8 +199,8 @@
 
                 </div>
 
-                <div class="cold-md-4 col-sm-4">
-                    <div class="alert alert-danger" style="text-align: center;">
+                <div id="top-alert" class="cold-md-4 col-sm-4">
+                    <div class="alert alert-danger" style="text-align: center; font-size: 14px; font-weight:100px;">
                         JANGAN TUTUP HALAMAN INI
                     </div>
                 </div>
@@ -419,9 +424,8 @@
                             <div id="containerButton">
                                 <div id="contButton">
                                     <button type="button" id="prevBtn" onclick="nextPrev(-1)">Kembali</button>
-                                    <button type="button" title=""
-                                        id="nextBtn" data-bs-toggle="tooltip" data-bs-placement="top"
-                                        onclick="nextPrev(1)">Selanjutnya</button>
+                                    <button type="button" title="" id="nextBtn" data-bs-toggle="tooltip"
+                                        data-bs-placement="top" onclick="nextPrev(1)">Selanjutnya</button>
                                 </div>
                             </div>
                         </div>
@@ -433,7 +437,7 @@
             </div>
 
             <div class="row footer">
-                <div style="text-align: left;">Copyright 2020 All Rights Reserved</div>
+                <div style="text-align: left;">Copyright 2021 All Rights Reserved</div>
             </div>
         </div>
 

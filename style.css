@@ -71,6 +71,7 @@ h1#textSelamat {
 #textInfo {
   color: #3a3a3a;
 }
+
 #textCountdown {
   color: #00438b;
 }
@@ -445,13 +446,43 @@ img {
     position: absolute;
     top: 0px;
     width: 100%;
-    height: 90%;
+    height: 52%;
     background-color: white;
     border-radius: 0 0 20px 20px;
   }
 
   h1#textSelamat {
     text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: -10px;
+  }
+
+  #top-alert {
+    margin-top: -10px;
+    margin-bottom: -20px;
+  }
+
+  #top-alert div.alert {
+    padding: 0;
+    color: red;
+    font-weight: 500;
+  }
+
+  #textInfo {
+    font-size: 11px;
+
+    margin-bottom: 0px;
+  }
+
+  img#logo-bakti-online {
+    width: 50%;
+    height: 75%;
+  }
+
+  .grid-row {
+    margin-top: -5px;
+    margin-bottom: -5px;
   }
 
   .grid-row > div {
@@ -459,6 +490,18 @@ img {
     padding: 5px;
     /* background-color: aliceblue; */
     margin: 2px 0;
+  }
+
+  #videoButton {
+    height: 40px;
+  }
+
+  #bannerButton {
+    height: 40px;
+  }
+
+  #beritaButton {
+    height: 40px;
   }
 
   #prevBtn {
@@ -482,11 +525,25 @@ img {
     display: block;
     float: right;
     width: 100%;
+
+    font-size: 10px;
+    font-weight: bold;
+    color: #00438b;
+    margin-top: 20px;
   }
 
   #hubungiKami,
   #box-hubungi-kami {
     display: none;
+  }
+
+  #doneSurvey h2 {
+    font-size: 16px;
+  }
+
+  #doneSurvey img {
+    height: 25%;
+    width: 25%;
   }
 
   .survey-select-item
