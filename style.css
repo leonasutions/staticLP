@@ -355,6 +355,10 @@ img {
   margin: 2px 0;
 }
 
+.footer-mobile {
+  display: none;
+}
+
 .footer {
   border-top: 1px solid black;
   width: 100%;
@@ -390,6 +394,18 @@ img {
     display: block;
   }
 
+  #videoButton img {
+    margin: 5px 10px;
+  }
+
+  #bannerButton img {
+    margin: 5px 10px;
+  }
+
+  #beritaButton img {
+    margin: 5px 10px;
+  }
+
   .survey-select-item {
     margin-left: 3%;
   }
@@ -423,6 +439,18 @@ img {
 
   #logo-bakti-online {
     width: 50%;
+  }
+
+  #videoButton img {
+    margin: 5px 10px;
+  }
+
+  #bannerButton img {
+    margin: 5px 10px;
+  }
+
+  #beritaButton img {
+    margin: 5px 10px;
   }
 
   .survey-select-item
@@ -477,8 +505,10 @@ img {
   }
 
   img#logo-bakti-online {
-    width: 50%;
-    height: 75%;
+    margin-top: 21px;
+    margin-bottom: 10px;
+    width: 98px;
+    height: 42px;
   }
 
   .grid-row {
@@ -505,21 +535,25 @@ img {
     height: 40px;
   }
 
-  #prevBtn {
-    /* margin-bottom: 10px; */
+  #videoButton img {
+    margin: 5px 10px;
   }
 
-  #regForm {
-    width: 95%;
+  #bannerButton img {
+    margin: 5px 10px;
+  }
+
+  #beritaButton img {
+    margin: 5px 10px;
+  }
+
+  #prevBtn {
+    /* margin-bottom: 10px; */
   }
 
   .progress,
   .progress-text {
     display: none;
-  }
-
-  #logo-bakti-online {
-    width: 50%;
   }
 
   #hubungi-kami-mobile {
@@ -530,7 +564,7 @@ img {
     font-size: 10px;
     font-weight: bold;
     color: #00438b;
-    margin-top: 20px;
+    margin-top: 35px;
   }
 
   #hubungiKami,
@@ -548,13 +582,24 @@ img {
     border-radius: 10px;
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
     padding: 20px;
-    width: 100%;
+    width: 95%;
+    min-width: 250px;
+    min-height: 250px;
+  }
+
+  #doneSurvey {
+    background-color: #ffffff;
+    margin: 15px auto;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    width: 95%;
     min-width: 250px;
     min-height: 250px;
   }
 
   #doneSurvey h2 {
-    font-size: 16px;
+    font-size: 14px;
   }
 
   #doneSurvey img {
@@ -568,5 +613,9 @@ img {
     width: 75px;
     height: 75px;
     background-size: 90px;
+  }
+
+  .row.footer {
+    display: none;
   }
 }
