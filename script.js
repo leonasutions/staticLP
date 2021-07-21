@@ -205,6 +205,17 @@ function reply_click(clicked_id) {
     }
   }
 }
+
+function shortChar(char) { 
+
+  var newChars = char
+  if(char.length > 50) { 
+    newChars = char.slice(0,50)+" ... "
+  }
+
+  return newChars
+}
+
 $(document).ready(function () {
   $("#resolusilower").click(function (e) {
     $("#dropdownMenuButton1").text("Kualitas 144p");
@@ -221,6 +232,15 @@ $(document).ready(function () {
     var video = document.getElementById("videoPlayer");
     video.src = url + "video/" + sch.video._id + "/" + "360";
   });
+
+  // var judulVideo = $("#judulVideo").html()
+  // $("#judulVideo").html(shortChar(judulVideo))
+
+  // var judulBanner = $("#judulBanner").html()
+  // $("#judulBanner").html(shortChar(judulBanner))
+
+  // var judulBanner = $("#judulBanner").html()
+  // $("#judulBanner").html(shortChar(judulBanner))
 });
 
 function getJadwal() {
@@ -241,11 +261,11 @@ function getJadwal() {
       demoId = data.demoId;
       $("#judulBanner").text(
         data.schedule.banner.details.title
-          ? data.schedule.banner.details.title
+          ? shortChar(data.schedule.banner.details.title)
           : "-"
       );
-      $("#judulVideo").text(data.schedule.video.details.title);
-      $("#judulBerita").text(data.schedule.news.title);
+      $("#judulVideo").text(data.schedule.video.details.title ? shortChar(data.schedule.video.details.title) : "");
+      $("#judulBerita").text(data.schedule.news.title ? shortChar(data.schedule.news.title) : "");
       demo = data.demo;
       survey = data.survey;
       //   console.log(document.getElementById("mac").value);
@@ -396,6 +416,8 @@ function getJadwal() {
     },
   });
 }
+
+
 
 var currentTab = 0;
 showTab(currentTab);
