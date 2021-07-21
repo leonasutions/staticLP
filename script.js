@@ -266,6 +266,14 @@ function getJadwal() {
       );
       $("#judulVideo").text(data.schedule.video.details.title ? shortChar(data.schedule.video.details.title) : "");
       $("#judulBerita").text(data.schedule.news.title ? shortChar(data.schedule.news.title) : "");
+      
+      $("#judulBanner").attr("title",data.schedule.banner.details.title
+          ? data.schedule.banner.details.title
+          : "-"
+      )
+      $("#judulVideo").attr("title",data.schedule.video.details.title ? data.schedule.video.details.title : "");
+      $("#judulBerita").attr("title",data.schedule.news.title ? data.schedule.news.title : "");
+
       demo = data.demo;
       survey = data.survey;
       //   console.log(document.getElementById("mac").value);
