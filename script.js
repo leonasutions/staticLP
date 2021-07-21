@@ -270,7 +270,7 @@ function getJadwal() {
             elem.hidden = "true";
             hubungButon.hidden = false;
             hubungButon.disabled = false;
-            // konekInternet();
+            konekInternet();
 
           } else {
             elem.innerHTML =
@@ -338,7 +338,7 @@ function getJadwal() {
             hubungButon.hidden = false;
             hubungButon.disabled = false;
 
-            // konekInternet();
+            konekInternet();
           } else {
             elem.innerHTML =
               "Anda akan terhubung ke internet setelah " +
