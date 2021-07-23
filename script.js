@@ -288,6 +288,8 @@ function getJadwal() {
         elem2.hidden = true;
 
         hubungButon.hidden = false;
+        hubungButon2.hidden = false;
+
         $("#bar").css("width", 100 + "%");
         $(`#doneSurvey`).append(
           `<h2>Terima kasih ${data.name}, telah berpartisipasi di survey BAKTI ONLINE</h2>`
@@ -311,7 +313,7 @@ function getJadwal() {
             elem2.hidden = "true";
 
             hubungButon.hidden = false;
-            hubungButon.hidden = false;
+            hubungButon2.hidden = false;
 
             konekInternet();
 
@@ -387,7 +389,7 @@ function getJadwal() {
             elem2.hidden = "true";
 
             hubungButon.hidden = false;
-            hubungButon.disabled = false;
+            hubungButon2.hidden = false;
 
             konekInternet();
           } else {
