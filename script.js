@@ -300,6 +300,7 @@ function getJadwal() {
         $("#textCount").text(
           data.questionsLength + 5 + "/" + (data.questionsLength + 5)
         );
+
       } else if (demo == true && survey == false) {
         var timerId = setInterval(countdown, 1000);
         function countdown() {
@@ -310,7 +311,7 @@ function getJadwal() {
             elem2.hidden = "true";
 
             hubungButon.hidden = false;
-            hubungButon.disabled = false;
+            hubungButon.hidden = false;
 
             konekInternet();
 
