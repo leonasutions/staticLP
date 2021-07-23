@@ -229,7 +229,7 @@
                         </div>
                     </div>
                     <!-- button internet -->
-                    <div class="row grid-row ">
+                    <div id="desktop-connect-internet" class="row grid-row ">
                         <div class="col-sm-12 col-md-10 col-xs-12">
                             <div>
                                 <h6 id="textCountdown">Anda akan terhubung ke internet setelah 45 detik, atau selesaikan
@@ -242,6 +242,7 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- button Content -->
                     <div class="row grid-row">
                         <div class="col-md-10 col-sm-12 col-xs-12">
@@ -291,6 +292,9 @@
                             </a>
                         </div>
                     </div>
+
+
+
                 </div>
 
                 <!-- Survey -->
@@ -304,6 +308,23 @@
                         <div id="bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
                             aria-valuemax="100"></div>
                     </div>
+
+                    <!-- button internet mobile -->
+                    <div id="mobile-connect-internet" class="row grid-row ">
+                        <div class="col-sm-12 col-md-10 col-xs-12">
+                            <div>
+                                <h6 id="textCountdown2">Anda akan terhubung ke internet setelah 45 detik, atau
+                                    selesaikan
+                                    survey dan klik tombol hubungkan ke internet</h>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary" id='hubungButton2' onclick="konekInternet()"
+                                    disabled='true' type="button">Hubungkan ke
+                                    Internet</button>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- questions -->
                     <div class="row grid-row">
                         <div class="container text-center" id="doneSurvey">
