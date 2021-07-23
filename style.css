@@ -72,9 +72,11 @@ h1#textSelamat {
   color: #3a3a3a;
 }
 
-#textCountdown {
+#textCountdown,
+#textCountdown2 {
   color: #00438b;
 }
+
 #bar {
   width: 0%;
   background-color: #00438b !important;
@@ -308,6 +310,15 @@ a {
   border-radius: 7.5px;
   border-bottom-right-radius: 25px;
 }
+
+#desktop-connect-internet {
+  display: block;
+}
+
+#mobile-connect-internet {
+  display: none;
+}
+
 .button {
   background: #8cc6c9;
   color: #fff;
@@ -475,7 +486,7 @@ img {
     position: absolute;
     top: 0px;
     width: 100%;
-    height: 52%;
+    height: 44%;
     background-color: white;
     border-radius: 0 0 20px 20px;
   }
@@ -545,6 +556,20 @@ img {
 
   #beritaButton img {
     margin: 5px 10px;
+  }
+
+  #desktop-connect-internet {
+    display: none;
+  }
+
+  #mobile-connect-internet {
+    display: block;
+  }
+
+  #textCountdown,
+  #textCountdown2 {
+    color: #00438b;
+    font-size: 11px;
   }
 
   #prevBtn {

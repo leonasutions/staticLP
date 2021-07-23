@@ -246,6 +246,9 @@ $(document).ready(function () {
 function getJadwal() {
   var hubungButon = document.getElementById("hubungButton");
   hubungButon.hidden = true;
+  var hubungButon2 = document.getElementById("hubungButton2");
+  hubungButon2.hidden = true;
+
   $.ajax({
     type: "POST",
     dataType: "json",
@@ -253,7 +256,9 @@ function getJadwal() {
     url: "https://lp-staging.devlabs.id/get/jadwal/",
     success: function (data) {
       var timeLeft = 45;
+
       var elem = document.getElementById("textCountdown");
+      var elem2 = document.getElementById("textCountdown2");
 
       dfp = data.dfp._id;
       sch = data.schedule;
@@ -278,14 +283,19 @@ function getJadwal() {
       survey = data.survey;
       //   console.log(document.getElementById("mac").value);
       if (demo && survey) {
+
         elem.hidden = true;
+        elem2.hidden = true;
+
         hubungButon.hidden = false;
         $("#bar").css("width", 100 + "%");
         $(`#doneSurvey`).append(
           `<h2>Terima kasih ${data.name}, telah berpartisipasi di survey BAKTI ONLINE</h2>`
         );
         $("#doneSurvey").css("display", "block");
+
         document.getElementById("hubungButton").disabled = false;
+        document.getElementById("hubungButton2").disabled = false;
 
         $("#textCount").text(
           data.questionsLength + 5 + "/" + (data.questionsLength + 5)
@@ -295,9 +305,13 @@ function getJadwal() {
         function countdown() {
           if (timeLeft == -1) {
             clearTimeout(timerId);
+
             elem.hidden = "true";
+            elem2.hidden = "true";
+
             hubungButon.hidden = false;
             hubungButon.disabled = false;
+
             konekInternet();
 
           } else {
@@ -305,6 +319,11 @@ function getJadwal() {
               "Anda akan terhubung ke internet setelah " +
               timeLeft +
               " detik, atau selesaikan survey dan klik tombol hubungkan ke internet";
+            elem2.innerHTML =
+              "Anda akan terhubung ke internet setelah " +
+              timeLeft +
+              " detik, atau selesaikan survey dan klik tombol hubungkan ke internet";
+
             timeLeft--;
           }
         }
@@ -362,7 +381,10 @@ function getJadwal() {
         function countdown() {
           if (timeLeft == -1) {
             clearTimeout(timerId);
+
             elem.hidden = "true";
+            elem2.hidden = "true";
+
             hubungButon.hidden = false;
             hubungButon.disabled = false;
 
@@ -372,6 +394,12 @@ function getJadwal() {
               "Anda akan terhubung ke internet setelah " +
               timeLeft +
               " detik, atau selesaikan survey dan klik tombol hubungkan ke internet";
+            
+            elem2.innerHTML =
+              "Anda akan terhubung ke internet setelah " +
+              timeLeft +
+              " detik, atau selesaikan survey dan klik tombol hubungkan ke internet";
+
             timeLeft--;
           }
         }
@@ -535,10 +563,18 @@ function nextPrev(n) {
       `<h2>Terima kasih ${paramObj.fname} ${paramObj.lname}, telah berpartisipasi di survey BAKTI ONLINE</h2>`
     );
     $("#doneSurvey").css("display", "block");
+
     document.getElementById("hubungButton").disabled = false;
+    document.getElementById("hubungButton2").disabled = false;
+
     var elem = document.getElementById("textCountdown");
     elem.hidden = true;
+    var elem2 = document.getElementById("textCountdown2");
+    elem2.hidden = true;
+
     document.getElementById("hubungButton").hidden = false;
+    document.getElementById("hubungButton2").hidden = false;
+
     return false;
   }
   showTab(currentTab);
