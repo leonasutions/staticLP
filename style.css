@@ -1,8 +1,3 @@
-@font-face {
-  font-family: lato;
-  src: url("https://lp-staging.devlabs.id/assets/global/Lato-Regular.ttf");
-}
-
 .modal-header {
   border-bottom: none;
 }
@@ -148,13 +143,13 @@ h1#textSelamat {
 .survey-select-item.gender-1
   .survey-select-item-inner
   .survey-select-item-label-picture {
-  background-image: url("https://lp-staging.devlabs.id/assets/global/pria.svg");
+  background-image: url("./pria.svg");
 }
 
 .survey-select-item.gender-2
   .survey-select-item-inner
   .survey-select-item-label-picture {
-  background-image: url("https://lp-staging.devlabs.id/assets/global/wanita.svg");
+  background-image: url("./wanita.svg");
 }
 
 .modal-content {
@@ -182,7 +177,8 @@ video {
 }
 
 body {
-  background-image: url("https://lp-staging.devlabs.id/assets/global/bgcomp.svg");
+  /* background-image: url("./bgcomp.svg"); */
+  background-image: url("./bgcomp.svg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
