@@ -445,6 +445,8 @@ img {
   }
 
   #logo-bakti-online {
+    /* width: 200px;
+    height: 150px; */
     width: 50%;
   }
 
@@ -640,3 +642,138 @@ img {
     display: none;
   }
 }
+
+/* Safari 11+ */
+@media not all and (min-resolution:.001dpcm)
+{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+  
+  @media (min-width: 662px) {
+   
+
+    #top-row.grid-row { 
+      /* height: 150px; */
+    }
+
+    #top-col{ 
+      max-height: 80px;
+    }
+
+
+    img#logo-bakti-online{
+      margin-top: -70px;
+      margin-left: 50px;
+      /* width: 50%;
+      height: 50%; */
+      height: 187px; /* ORIENTASI SAFARI CACAT */
+      width: 80px;
+    }
+  
+    #logo-bakti-online { 
+      transform: rotate(-90deg);
+    }
+  }
+
+  @media (min-width: 576px) and (max-width: 768px) { 
+
+    #logo-bakti-online { 
+      width: 50%;
+      margin-left: 0;
+    }
+
+    #top-row.grid-row { 
+      /* height: 150px; */
+    }
+
+    #top-col{ 
+      max-height: 80px;
+    }
+
+    img#logo-bakti-online{
+      margin-top: -70px;
+      margin-left: 50px;
+      /* width: 50%;
+      height: 50%; */
+      height: 187px; /* ORIENTASI SAFARI CACAT */
+      width: 80px;
+    }
+  
+    #logo-bakti-online { 
+      transform: rotate(-90deg);
+    }
+  }
+
+  @media (min-width: 100px) and (max-width: 575px) {
+
+    #top-row.grid-row { 
+      /* height: 150px; */
+    }
+
+    #top-col{ 
+      max-height: 80px;
+    }
+
+    img#logo-bakti-online{
+      
+      margin-top: -10px;
+      margin-left: 25px;
+      /* width: 93px;
+      height: 40px; */
+      height: 92px; /* ORIENTASI SAFARI CACAT */
+      width: 40px;
+    }
+  
+    #logo-bakti-online { 
+      transform: rotate(-90deg);
+    }
+  }
+}}
+
+/* Safari 10.1 */
+@media not all and (min-resolution:.001dpcm){ 
+@supports (-webkit-appearance:none) and (not (stroke-color:transparent)) {
+  
+
+  @media (min-width: 100px) and (max-width: 575px) {
+    #top-row.grid-row { 
+      height: 150px;
+    }
+
+    img#logo-bakti-online{
+      /* margin-top: -70px;
+      margin-left: 50px; */
+      width: 50%;
+      height: 50%;
+    }
+  
+    #logo-bakti-online { 
+      transform: rotate(-90deg);
+    }
+  }
+
+  @media (min-width: 576px) and (max-width: 768px) { 
+    #logo-bakti-online{
+      margin-top: 21px;
+      margin-bottom: 10px;
+     
+      transform: rotate(-90deg);
+    }
+  
+    #logo-bakti-online { 
+      transform: rotate(-90deg);
+    }
+  
+    .grid-row { 
+      height: fit-content;
+    }
+
+    #logo-bakti-online { 
+      width: 50%;
+    }
+
+    #top-row.grid-row { 
+      height: 150px;
+    }
+  }
+}}
+
+/* Safari
