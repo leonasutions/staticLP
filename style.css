@@ -1,779 +1,786 @@
 .modal-header {
-  border-bottom: none;
-}
-
-#hubungi-kami-mobile {
-  display: none;
-}
-
-#closeButtonVideo {
-  opacity: 1;
-}
-#beritaBody {
-  background-color: white;
-}
-#imageBerita {
-  max-height: 55vh;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-#sinopsisBerita {
-  text-align: justify;
-}
-#textSumber {
-  text-align: left;
-  color: #00438b;
-}
-#hubungiKami {
-  color: #00438b;
-  text-decoration: underline;
-  text-decoration-color: #00438b;
-  cursor: pointer;
-}
-#dropdownMenuButton1 {
-  float: right;
-}
-#containerButton {
-  overflow: auto;
-}
-#contButton {
-  float: right;
-}
-
-#genderImg1 {
-  width: 100px;
-  height: 100px;
-  margin-right: 5px;
-  /* margin-right: 5vh;
-  margin-bottom: 4vh; */
-}
-
-#genderImg2 {
-  width: 100px;
-  height: 100px;
-  margin-left: 5px;
-
-  /* margin-right: 5vh;
-  margin-bottom: 4vh; */
-}
-
-h1#textSelamat {
-  color: #00438b;
-  text-align: center;
-}
-
-#textInfo {
-  color: #3a3a3a;
-}
-
-#textCountdown,
-#textCountdown2 {
-  color: #00438b;
-}
-
-#bar {
-  width: 0%;
-  background-color: #00438b !important;
-}
-#doneSurvey,
-#regForm {
-  display: none;
-}
-#imageBanner {
-  max-height: 75vh;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-}
-
-#bannerButton,
-#videoButton,
-#beritaButton {
-  width: 100%;
-}
-
-.survey-form-gender.show {
-  opacity: 1;
-  right: 0%;
-  left: 0%;
-  transition: opacity 500ms, right 800ms, left 800ms;
-  -webkit-transition: opacity 500ms, right 800ms, left 800ms;
-  -moz-transition: opacity 500ms, right 800ms, left 800ms;
-  -ms-transition: opacity 500ms, right 800ms, left 800ms;
-  -o-transition: opacity 500ms, right 800ms, left 800ms;
-}
-
-.survey-gender-1[type="radio"] {
-  opacity: 0;
-}
-
-.survey-select-item
-  > input:checked
-  + .survey-select-item-inner
-  .survey-select-item-label-picture {
-  border-color: #c42127;
-  -webkit-transform: scale(1.1);
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  transform: scale(1.1);
-}
-
-.survey-select-item
-  .survey-select-item-inner
-  .survey-select-item-label-picture {
-  width: 50px;
-  height: 50px;
-  border: 3px solid transparent;
-  background-color: #dce0ff;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 90px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-  transition: border-color 500ms, transform 500ms;
-  -webkit-transition: border-color 500ms, transform 500ms;
-  -moz-transition: border-color 500ms, transform 500ms;
-  -ms-transition: border-color 500ms, transform 500ms;
-  -o-transition: border-color 500ms, transform 500ms;
-}
-
-.survey-select-item.gender-1
-  .survey-select-item-inner
-  .survey-select-item-label-picture {
-  background-image: url("./pria.svg");
-}
-
-.survey-select-item.gender-2
-  .survey-select-item-inner
-  .survey-select-item-label-picture {
-  background-image: url("./wanita.svg");
-}
-
-.modal-content {
-  background-color: transparent;
-  border: none;
-}
-video {
-  width: 100%;
-  height: auto;
-}
-.modal-header {
-  border-bottom: none;
-}
-.btn-close {
-  opacity: 1;
-}
-
-.progress {
-  border-radius: 20px;
-  padding: 0 !important;
-}
-
-.progress-bar {
-  padding-top: -2px !important;
-}
-
-body {
-  /* background-image: url("./bgcomp.svg"); */
-  background-image: url("./bgcomp.svg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-}
-
-::-webkit-input-placeholder {
-  /* text-align: center; */
-}
-
-:-moz-placeholder {
-  /* Firefox 18- */
-  /* text-align: center; */
-}
-
-::-moz-placeholder {
-  /* Firefox 19+ */
-  text-align: center;
-}
-
-:-ms-input-placeholder {
-  text-align: center;
-}
-
-#formulir {
-  margin-bottom: 10px;
-}
-
-#regForm {
-  background-color: #ffffff;
-  margin: 15px auto;
-  border-radius: 10px;
-  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
-  padding: 40px;
-  width: 80%;
-  min-width: 250px;
-  min-height: 300px;
-}
-
-#doneSurvey {
-  background-color: #ffffff;
-  margin: 15px auto;
-  border-radius: 10px;
-  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
-  padding: 40px;
-  width: 80%;
-  min-width: 250px;
-  min-height: 300px;
-}
-
-#daysDropdown,
-#monthsDropdown,
-#yearsDropdown {
-  margin: 5px 0;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  /* display: none; <- Crashes Chrome on hover */
-  -webkit-appearance: none;
-  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-}
-
-input[type="number"] {
-  -moz-appearance: textfield; /* Firefox */
-}
-
-input {
-  padding: 10px;
-  width: 100%;
-  font-size: 17px;
-  border-top: 1px;
-  border-left: 1px;
-  border-right: 1px;
-  margin-bottom: 15px;
-}
-
-/* Mark input boxes that gets an error on validation: */
-input.invalid {
-  background-color: #ffdddd;
-}
-
-/* Hide all steps by default: */
-.tab {
-  display: none;
-}
-
-button {
-  background-color: #00438b;
-  color: #ffffff;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
-  font-size: 17px;
-  cursor: pointer;
-}
-
-#prevBtn {
-  background-color: #00438b;
-}
-
-a {
-  cursor: pointer;
-}
-#bannerButton {
-  background: #e2b674;
-  color: #fff;
-  text-decoration: none;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  height: 60px;
-  display: inline-block;
-  border-radius: 7.5px;
-  border-bottom-right-radius: 25px;
-}
-#beritaButton {
-  background: #c18ece;
-  color: #fff;
-  text-decoration: none;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  height: 60px;
-  display: inline-block;
-  border-radius: 7.5px;
-  border-bottom-right-radius: 25px;
-}
-
-#desktop-connect-internet {
-  display: block;
-}
-
-#mobile-connect-internet {
-  display: none;
-}
-
-.button {
-  background: #8cc6c9;
-  color: #fff;
-  text-decoration: none;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  height: 60px;
-  display: inline-block;
-  border-radius: 7.5px;
-  border-bottom-right-radius: 25px;
-}
-
-span {
-  font-size: 2.1vmin;
-  color: #fff;
-  display: block;
-}
-
-img {
-  vertical-align: middle;
-  display: inline-block;
-}
-
-.center {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-}
-
-.btnText {
-  vertical-align: middle;
-  display: inline-block;
-}
-
-#gridcontainer {
-  padding: 0 10%;
-}
-
-.grid-row > div {
-  /* border: 1px solid lightgrey; */
-  padding: 5px;
-  /* background-color: aliceblue; */
-  margin: 2px 0;
-}
-
-.footer-mobile {
-  display: none;
-}
-
-.footer {
-  border-top: 1px solid black;
-  width: 100%;
-  margin-top: 100px;
-}
-
-/* ========================== media screen ================================*/
-
-/* ================================================= DESKTOP ================================================================= */
-@media (min-width: 662px) {
-  h1#textSelamat {
-    text-align: center;
+    border-bottom: none;
   }
-
-  .grid-row > div {
-    /* border: 1px solid lightgrey; */
-    padding: 10px;
-    /* background-color: aliceblue; */
-    margin: 2px 0;
-  }
-
+  
   #hubungi-kami-mobile {
-    display: none;
+    /* eko version */
+    display: none !important;
   }
-
-  #hubungiKami {
+  
+  #closeButtonVideo {
+    opacity: 1;
+  }
+  #beritaBody {
+    background-color: white;
+  }
+  #imageBerita {
+    max-height: 55vh;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
+  }
+  #sinopsisBerita {
+    text-align: justify;
+  }
+  #textSumber {
+    text-align: left;
+    color: #00438b;
+  }
+  #hubungiKami {
+    color: #00438b;
+    text-decoration: underline;
+    text-decoration-color: #00438b;
+    cursor: pointer;
+  }
+  #dropdownMenuButton1 {
     float: right;
   }
-
-  .progress,
-  .progress-text {
-    display: block;
+  #containerButton {
+    overflow: auto;
   }
-
-  #videoButton img {
-    margin: 5px 10px;
-  }
-
-  #bannerButton img {
-    margin: 5px 10px;
-  }
-
-  #beritaButton img {
-    margin: 5px 10px;
-  }
-
-  .survey-select-item {
-    margin-left: 3%;
-  }
-}
-
-@media (min-width: 576px) and (max-width: 768px) {
-  h1#textSelamat {
-    text-align: center;
-  }
-
-  .grid-row > div {
-    /* border: 1px solid lightgrey; */
-    padding: 10px;
-    /* background-color: aliceblue; */
-    margin: 2px 0;
-  }
-
-  #hubungiKami {
-    display: block;
+  #contButton {
     float: right;
   }
-
-  #hubungi-kami-mobile {
+  
+  #genderImg1 {
+    width: 100px;
+    height: 100px;
+    margin-right: 5px;
+    /* margin-right: 5vh;
+    margin-bottom: 4vh; */
+  }
+  
+  #genderImg2 {
+    width: 100px;
+    height: 100px;
+    margin-left: 5px;
+  
+    /* margin-right: 5vh;
+    margin-bottom: 4vh; */
+  }
+  
+  h1#textSelamat {
+    color: #00438b;
+    text-align: center;
+  }
+  
+  #textInfo {
+    color: #3a3a3a;
+  }
+  
+  #textCountdown,
+  #textCountdown2 {
+    color: #00438b;
+  }
+  
+  #bar {
+    width: 0%;
+    background-color: #00438b !important;
+  }
+  #doneSurvey,
+  #regForm {
     display: none;
   }
-
-  .progress,
-  .progress-text {
+  #imageBanner {
+    max-height: 75vh;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
   }
-
-  #logo-bakti-online {
-    /* width: 200px;
-    height: 150px; */
-    width: 50%;
+  
+  #bannerButton,
+  #videoButton,
+  #beritaButton {
+    width: 100%;
+    display: flex !important;
+    align-items: center !important;
   }
-
-  #videoButton img {
-    margin: 5px 10px;
+  
+  .survey-form-gender.show {
+    opacity: 1;
+    right: 0%;
+    left: 0%;
+    transition: opacity 500ms, right 800ms, left 800ms;
+    -webkit-transition: opacity 500ms, right 800ms, left 800ms;
+    -moz-transition: opacity 500ms, right 800ms, left 800ms;
+    -ms-transition: opacity 500ms, right 800ms, left 800ms;
+    -o-transition: opacity 500ms, right 800ms, left 800ms;
   }
-
-  #bannerButton img {
-    margin: 5px 10px;
+  
+  .survey-gender-1[type="radio"] {
+    opacity: 0;
   }
-
-  #beritaButton img {
-    margin: 5px 10px;
+  
+  .survey-select-item
+    > input:checked
+    + .survey-select-item-inner
+    .survey-select-item-label-picture {
+    border-color: #c42127;
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    transform: scale(1.1);
   }
-
+  
   .survey-select-item
     .survey-select-item-inner
     .survey-select-item-label-picture {
-    width: 150px;
-    height: 150px;
-    background-size: 100px;
+    width: 50px;
+    height: 50px;
+    border: 3px solid transparent;
+    background-color: #dce0ff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 90px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    transition: border-color 500ms, transform 500ms;
+    -webkit-transition: border-color 500ms, transform 500ms;
+    -moz-transition: border-color 500ms, transform 500ms;
+    -ms-transition: border-color 500ms, transform 500ms;
+    -o-transition: border-color 500ms, transform 500ms;
   }
-}
-
-/* ===================================================== MOBILE ======================================================== */
-
-/* MOBILE */
-@media (min-width: 100px) and (max-width: 575px) {
-  body {
-    background-image: none;
-    background-color: #eef4f9;
+  
+  .survey-select-item.gender-1
+    .survey-select-item-inner
+    .survey-select-item-label-picture {
+    background-image: url("./pria.svg");
   }
-
-  .mobile-background {
-    position: absolute;
-    top: 0px;
+  
+  .survey-select-item.gender-2
+    .survey-select-item-inner
+    .survey-select-item-label-picture {
+    background-image: url("./wanita.svg");
+  }
+  
+  .modal-content {
+    background-color: transparent;
+    border: none;
+  }
+  video {
     width: 100%;
-    height: 44%;
-    background-color: white;
-    border-radius: 0 0 20px 20px;
+    height: auto;
   }
-
-  h1#textSelamat {
-    text-align: left;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: -10px;
+  .modal-header {
+    border-bottom: none;
   }
-
-  #top-alert {
-    margin-top: -10px;
-    margin-bottom: -20px;
+  .btn-close {
+    opacity: 1;
   }
-
-  #top-alert div.alert {
-    padding: 0;
-    color: red;
-    font-weight: 500;
+  
+  .progress {
+    border-radius: 20px;
+    padding: 0 !important;
   }
-
-  #textInfo {
-    font-size: 11px;
-
-    margin-bottom: 0px;
+  
+  .progress-bar {
+    padding-top: -2px !important;
   }
-
-  img#logo-bakti-online {
-    margin-top: 21px;
+  
+  body {
+    /* background-image: url("./bgcomp.svg"); */
+    background-image: url("./bgcomp.svg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  
+  ::-webkit-input-placeholder {
+    /* text-align: center; */
+  }
+  
+  :-moz-placeholder {
+    /* Firefox 18- */
+    /* text-align: center; */
+  }
+  
+  ::-moz-placeholder {
+    /* Firefox 19+ */
+    text-align: center;
+  }
+  
+  :-ms-input-placeholder {
+    text-align: center;
+  }
+  
+  #formulir {
     margin-bottom: 10px;
-    width: 98px;
-    height: 42px;
   }
-
-  .grid-row {
-    margin-top: -5px;
-    margin-bottom: -5px;
+  
+  #regForm {
+    background-color: #ffffff;
+    margin: 15px auto;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 80%;
+    min-width: 250px;
+    min-height: 300px;
   }
-
+  
+  #doneSurvey {
+    background-color: #ffffff;
+    margin: 15px auto;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 80%;
+    min-width: 250px;
+    min-height: 300px;
+  }
+  
+  #daysDropdown,
+  #monthsDropdown,
+  #yearsDropdown {
+    margin: 5px 0;
+  }
+  
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+  
+  input[type="number"] {
+    -moz-appearance: textfield; /* Firefox */
+  }
+  
+  input {
+    padding: 10px;
+    width: 100%;
+    font-size: 17px;
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    margin-bottom: 15px;
+  }
+  
+  /* Mark input boxes that gets an error on validation: */
+  input.invalid {
+    background-color: #ffdddd;
+  }
+  
+  /* Hide all steps by default: */
+  .tab {
+    display: none;
+  }
+  
+  button {
+    background-color: #00438b;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 17px;
+    cursor: pointer;
+  }
+  
+  #prevBtn {
+    background-color: #00438b;
+  }
+  
+  a {
+    cursor: pointer;
+  }
+  #bannerButton {
+    background: #e2b674;
+    color: #fff;
+    text-decoration: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    height: 80px;
+    display: inline-block;
+    border-radius: 7.5px;
+    border-bottom-right-radius: 25px;
+  }
+  #beritaButton {
+    background: #c18ece;
+    color: #fff;
+    text-decoration: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    height: 80px;
+    display: inline-block;
+    border-radius: 7.5px;
+    border-bottom-right-radius: 25px;
+  }
+  
+  #desktop-connect-internet {
+    display: block;
+  }
+  
+  #mobile-connect-internet {
+    display: none;
+  }
+  
+  .button {
+    background: #8cc6c9;
+    color: #fff;
+    text-decoration: none;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    height: 80px;
+    display: inline-block;
+    border-radius: 7.5px;
+    border-bottom-right-radius: 25px;
+  }
+  
+  span {
+    font-size: 2.1vmin;
+    color: #fff;
+    display: block;
+  }
+  
+  img {
+    vertical-align: middle;
+    display: inline-block;
+  }
+  
+  .center {
+    position: relative;
+    /* top: 50%;
+    transform: translateY(-50%); */
+    width: 100%;
+  }
+  
+  .btnText {
+    vertical-align: middle;
+    display: inline-block;
+  }
+  
+  #gridcontainer {
+    padding: 0 7%;
+  }
+  
   .grid-row > div {
     /* border: 1px solid lightgrey; */
     padding: 5px;
     /* background-color: aliceblue; */
     margin: 2px 0;
   }
-
-  #videoButton {
-    height: 40px;
-  }
-
-  #bannerButton {
-    height: 40px;
-  }
-
-  #beritaButton {
-    height: 40px;
-  }
-
-  #videoButton img {
-    margin: 5px 10px;
-  }
-
-  #bannerButton img {
-    margin: 5px 10px;
-  }
-
-  #beritaButton img {
-    margin: 5px 10px;
-  }
-
-  #desktop-connect-internet {
+  
+  .footer-mobile {
     display: none;
   }
-
-  #mobile-connect-internet {
-    display: block;
-  }
-
-  #textCountdown,
-  #textCountdown2 {
-    color: #00438b;
-    font-size: 11px;
-  }
-
-  #prevBtn {
-    /* margin-bottom: 10px; */
-  }
-
-  .progress,
-  .progress-text {
-    display: none;
-  }
-
-  #hubungi-kami-mobile {
-    display: block;
-    float: right;
+  
+  .footer {
+    border-top: 1px solid black;
     width: 100%;
-
-    font-size: 10px;
-    font-weight: bold;
-    color: #00438b;
-    margin-top: 35px;
+    margin-top: 100px;
   }
-
-  #hubungiKami,
-  #box-hubungi-kami {
-    display: none;
-  }
-
-  #formulir h2 {
-    display: none;
-  }
-
-  #regForm {
-    background-color: #ffffff;
-    margin: 15px auto;
-    border-radius: 10px;
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    width: 95%;
-    min-width: 250px;
-    min-height: 250px;
-  }
-
-  #doneSurvey {
-    background-color: #ffffff;
-    margin: 15px auto;
-    border-radius: 10px;
-    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.5);
-    padding: 40px;
-    width: 95%;
-    min-width: 250px;
-    min-height: 250px;
-  }
-
-  #doneSurvey h2 {
-    font-size: 14px;
-  }
-
-  #doneSurvey img {
-    height: 25%;
-    width: 25%;
-  }
-
-  .survey-select-item
-    .survey-select-item-inner
-    .survey-select-item-label-picture {
-    width: 75px;
-    height: 75px;
-    background-size: 90px;
-  }
-
-  .row.footer {
-    display: none;
-  }
-}
-
-/* Safari 11+ */
-@media not all and (min-resolution:.001dpcm)
-{ @supports (-webkit-appearance:none) and (stroke-color:transparent) {
   
+  /* ========================== media screen ================================*/
+  
+  /* ================================================= DESKTOP ================================================================= */
   @media (min-width: 662px) {
-   
-
-    #top-row.grid-row { 
-      /* height: 150px; */
-    }
-
-    #top-col{ 
-      max-height: 80px;
-    }
-
-
-    img#logo-bakti-online{
-      margin-top: -70px;
-      margin-left: 50px;
-      /* width: 50%;
-      height: 50%; */
-      height: 187px; /* ORIENTASI SAFARI CACAT */
-      width: 80px;
+    h1#textSelamat {
+      text-align: center;
     }
   
-    #logo-bakti-online { 
-      transform: rotate(-90deg);
+    .grid-row > div {
+      /* border: 1px solid lightgrey; */
+      padding: 10px;
+      /* background-color: aliceblue; */
+      margin: 2px 0;
+    }
+  
+    #hubungi-kami-mobile {
+      display: none;
+      margin-top: 5px;
+    }
+  
+    #hubungiKami {
+      display: block;
+      float: right;
+    }
+  
+    .progress,
+    .progress-text {
+      display: block;
+    }
+  
+    #videoButton img {
+      margin: 5px 10px;
+    }
+  
+    #bannerButton img {
+      margin: 5px 10px;
+    }
+  
+    #beritaButton img {
+      margin: 5px 10px;
+    }
+  
+    .survey-select-item {
+      margin-left: 3%;
     }
   }
-
-  @media (min-width: 576px) and (max-width: 768px) { 
-
-    #logo-bakti-online { 
+  
+  @media (min-width: 576px) and (max-width: 768px) {
+    h1#textSelamat {
+      text-align: center;
+    }
+  
+    .grid-row > div {
+      /* border: 1px solid lightgrey; */
+      padding: 10px;
+      /* background-color: aliceblue; */
+      margin: 2px 0;
+    }
+  
+    #hubungiKami {
+      display: block;
+      float: right;
+    }
+  
+    #hubungi-kami-mobile {
+      display: flex;
+      justify-content: flex-end;
+    }
+  
+    .progress,
+    .progress-text {
+      display: block;
+    }
+  
+    #logo-bakti-online {
+      /* width: 200px;
+      height: 150px; */
       width: 50%;
-      margin-left: 0;
-    }
-
-    #top-row.grid-row { 
-      /* height: 150px; */
-    }
-
-    #top-col{ 
-      max-height: 80px;
-    }
-
-    img#logo-bakti-online{
-      margin-top: -70px;
-      margin-left: 50px;
-      /* width: 50%;
-      height: 50%; */
-      height: 187px; /* ORIENTASI SAFARI CACAT */
-      width: 80px;
     }
   
-    #logo-bakti-online { 
-      transform: rotate(-90deg);
-    }
-  }
-
-  @media (min-width: 100px) and (max-width: 575px) {
-
-    #top-row.grid-row { 
-      /* height: 150px; */
-    }
-
-    #top-col{ 
-      max-height: 80px;
-    }
-
-    img#logo-bakti-online{
-      
-      margin-top: -10px;
-      margin-left: 25px;
-      /* width: 93px;
-      height: 40px; */
-      height: 92px; /* ORIENTASI SAFARI CACAT */
-      width: 40px;
+    #videoButton img {
+      margin: 5px 10px;
     }
   
-    #logo-bakti-online { 
-      transform: rotate(-90deg);
+    #bannerButton img {
+      margin: 5px 10px;
     }
-  }
-}}
-
-/* Safari 10.1 */
-@media not all and (min-resolution:.001dpcm){ 
-@supports (-webkit-appearance:none) and (not (stroke-color:transparent)) {
   
-
-  @media (min-width: 100px) and (max-width: 575px) {
-    #top-row.grid-row { 
+    #beritaButton img {
+      margin: 5px 10px;
+    }
+  
+    .survey-select-item
+      .survey-select-item-inner
+      .survey-select-item-label-picture {
+      width: 150px;
       height: 150px;
-    }
-
-    img#logo-bakti-online{
-      /* margin-top: -70px;
-      margin-left: 50px; */
-      width: 50%;
-      height: 50%;
-    }
-  
-    #logo-bakti-online { 
-      transform: rotate(-90deg);
+      background-size: 100px;
     }
   }
-
-  @media (min-width: 576px) and (max-width: 768px) { 
-    #logo-bakti-online{
+  
+  /* ===================================================== MOBILE ======================================================== */
+  
+  /* MOBILE */
+  @media (min-width: 100px) and (max-width: 575px) {
+    body {
+      background-image: none;
+      background-color: #eef4f9;
+    }
+  
+    .mobile-background {
+      position: absolute;
+      top: 0px;
+      width: 100%;
+      height: 450px;
+      background-color: white;
+      border-radius: 0 0 20px 20px;
+    }
+  
+    h1#textSelamat {
+      text-align: left;
+      font-size: 20px;
+      font-weight: bold;
+      /* margin-bottom: -10px; */
+    }
+  
+    /* #top-alert {
+      margin-top: -10px;
+      margin-bottom: -20px;
+    } */
+  
+    #top-alert div.alert {
+      padding: 0;
+      color: red;
+      font-weight: 500;
+    }
+  
+    #textInfo {
+      font-size: 11px;
+    text-align:justify; 
+      margin-bottom: 0px;
+    }
+  
+    img#logo-bakti-online {
       margin-top: 21px;
       margin-bottom: 10px;
-     
-      transform: rotate(-90deg);
+      width: 98px;
+      height: 42px;
     }
   
-    #logo-bakti-online { 
-      transform: rotate(-90deg);
+    .grid-row {
+      margin-top: -5px;
+      margin-bottom: -5px;
     }
   
-    .grid-row { 
-      height: fit-content;
+    .grid-row > div {
+      /* border: 1px solid lightgrey; */
+      padding: 5px;
+      /* background-color: aliceblue; */
+      margin: 2px 0;
     }
-
-    #logo-bakti-online { 
-      width: 50%;
+  
+    #videoButton {
+      height: 60px;
     }
-
-    #top-row.grid-row { 
-      height: 150px;
+  
+    #bannerButton {
+      height: 60px;
+    }
+  
+    #beritaButton {
+      height: 60px;
+    }
+  
+    #videoButton img {
+      margin: 5px 10px;
+    }
+  
+    #bannerButton img {
+      margin: 5px 10px;
+    }
+  
+    #beritaButton img {
+      margin: 5px 10px;
+    }
+  
+    #desktop-connect-internet {
+      display: none;
+    }
+  
+    #mobile-connect-internet {
+      display: block;
+      margin-top: 5px;
+    }
+  
+    #textCountdown,
+    #textCountdown2 {
+      color: #00438b;
+      font-size: 11px;
+    }
+  
+    #prevBtn {
+      /* margin-bottom: 10px; */
+    }
+  
+    .progress,
+    .progress-text {
+      display: none;
+    }
+  
+    #hubungi-kami-mobile {
+      /* eko version */
+      display: block !important;
+      float: right;
+      width: 100%;
+  
+      font-size: 10px;
+      font-weight: bold;
+      color: #00438b;
+      margin-top: 35px;
+    }
+  
+    #hubungiKami,
+    #box-hubungi-kami {
+      display: none;
+    }
+  
+    #formulir h2 {
+      display: none;
+    }
+  
+    #regForm {
+      background-color: #ffffff;
+      margin: 15px auto;
+      border-radius: 10px;
+      box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 95%;
+      min-width: 250px;
+      min-height: 250px;
+    }
+  
+    #doneSurvey {
+      background-color: #ffffff;
+      margin: 15px auto;
+      border-radius: 10px;
+      box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      width: 95%;
+      min-width: 250px;
+      min-height: 250px;
+    }
+  
+    #doneSurvey h2 {
+      font-size: 14px;
+    }
+  
+    /* #doneSurvey img {
+      height: 25%;
+      width: 25%;
+    } */
+  
+    .survey-select-item
+      .survey-select-item-inner
+      .survey-select-item-label-picture {
+      width: 75px;
+      height: 75px;
+      background-size: 90px;
+    }
+  
+    .row.footer {
+      display: none;
     }
   }
-}}
-
-/* Safari
+  
+  /* Safari 11+ */
+  @media not all and (min-resolution:.001dpcm)
+  { @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+    
+    @media (min-width: 662px) {
+     
+  
+      #top-row.grid-row { 
+        /* height: 150px; */
+      }
+  
+      #top-col{ 
+        max-height: 80px;
+      }
+  
+  
+      img#logo-bakti-online{
+        margin-top: -70px;
+        margin-left: 50px;
+        /* width: 50%;
+        height: 50%; */
+        height: 187px; /* ORIENTASI SAFARI CACAT */
+        width: 80px;
+      }
+    
+      #logo-bakti-online { 
+        transform: rotate(-90deg);
+      }
+    }
+  
+    @media (min-width: 576px) and (max-width: 768px) { 
+  
+      #logo-bakti-online { 
+        width: 50%;
+        margin-left: 0;
+      }
+  
+      #top-row.grid-row { 
+        /* height: 150px; */
+      }
+  
+      #top-col{ 
+        max-height: 80px;
+      }
+  
+      img#logo-bakti-online{
+        margin-top: -70px;
+        margin-left: 50px;
+        /* width: 50%;
+        height: 50%; */
+        height: 187px; /* ORIENTASI SAFARI CACAT */
+        width: 80px;
+      }
+    
+      #logo-bakti-online { 
+        transform: rotate(-90deg);
+      }
+    }
+  
+    @media (min-width: 100px) and (max-width: 575px) {
+  
+      #top-row.grid-row { 
+        /* height: 150px; */
+      }
+  
+      #top-col{ 
+        max-height: 80px;
+      }
+  
+      img#logo-bakti-online{
+        
+        margin-top: -10px;
+        margin-left: 25px;
+        /* width: 93px;
+        height: 40px; */
+        height: 92px; /* ORIENTASI SAFARI CACAT */
+        width: 40px;
+      }
+    
+      #logo-bakti-online { 
+        transform: rotate(-90deg);
+      }
+    }
+  }}
+  
+  /* Safari 10.1 */
+  @media not all and (min-resolution:.001dpcm){ 
+  @supports (-webkit-appearance:none) and (not (stroke-color:transparent)) {
+    
+  
+    @media (min-width: 100px) and (max-width: 575px) {
+      #top-row.grid-row { 
+        height: 150px;
+      }
+  
+      img#logo-bakti-online{
+        /* margin-top: -70px;
+        margin-left: 50px; */
+        width: 50%;
+        height: 50%;
+      }
+    
+      #logo-bakti-online { 
+        transform: rotate(-90deg);
+      }
+    }
+  
+    @media (min-width: 576px) and (max-width: 768px) { 
+      #logo-bakti-online{
+        margin-top: 21px;
+        margin-bottom: 10px;
+       
+        transform: rotate(-90deg);
+      }
+    
+      #logo-bakti-online { 
+        transform: rotate(-90deg);
+      }
+    
+      .grid-row { 
+        height: fit-content;
+      }
+  
+      #logo-bakti-online { 
+        width: 50%;
+      }
+  
+      #top-row.grid-row { 
+        height: 150px;
+      }
+    }
+  }}
+  
+  /* Safari
