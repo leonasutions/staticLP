@@ -13,6 +13,7 @@
     <script src="https://lp-staging.devlabs.id/assets/global/md5.js"></script>
     <link rel="stylesheet" href="https://lp-staging.devlabs.id/assets/global/style.css">
 </head>
+
 <body>
     <table hidden="true" width="100%" style="margin-top: 10%;">
         <tr>
@@ -57,7 +58,8 @@
                         aria-label="Close"></button>
                 </div>
                 <div class="modal-body item-align-center">
-                    <img id="imageBanner" class="img-fluid" src="https://lp-staging.devlabs.id/assets/global/loading.svg">
+                    <img id="imageBanner" class="img-fluid"
+                        src="https://lp-staging.devlabs.id/assets/global/loading.svg">
                 </div>
             </div>
         </div>
@@ -102,7 +104,8 @@
                     <br />
                     <p style="text-align: center;"></p>
                     <p style="text-align: center;"></p>
-                    <img id="imageBerita" class="img-fluid" src="https://lp-staging.devlabs.id/assets/global/loading.svg">
+                    <img id="imageBerita" class="img-fluid"
+                        src="https://lp-staging.devlabs.id/assets/global/loading.svg">
                     <br />
                     <p class="px-5" id="sinopsisBerita"></p>
                     <p id="textSumber" class="px-5"><b id="sumber"></b> </p>
@@ -131,33 +134,35 @@
 
                     <form>
                         <div class="form-group">
-                            <label> Nama Anda </label>
+                            <label class="form-label"> Nama Anda </label>
                             <input class="form-control" placeholder="Ketik Disini" id="nama" name="nama">
                         </div>
 
                         <div class="form-group">
-                            <label> Nomor Telepon</label>
+                            <label class="form-label"> Nomor Telepon</label>
                             <input class="form-control" type="number" placeholder="Contoh: (0856936985224)" id="notelp"
                                 name="notelp">
                         </div>
 
                         <div class="form-group">
-                            <label> Email </label>
+                            <label class="form-label"> Email </label>
                             <input class="form-control" type="email" placeholder="Contoh: test@email.com" id="email"
                                 name="email">
                         </div>
 
-                        <div class="form-group">
-                            <select class="DDInput" id="kategori" name="kategori">
-                                <option value="" disabled="" selected="">Pilih Kategori</option>
-                                <option value="konten">Konten</option><option value="data">Data</option>
+                        <div class="mb-3">
+                            <label class="form-label"> Kategori </label>
+                            <select class="SSID form-select " id="kategori" name="kategori" aria-label="Default select">
+                                <option value="" disabled="" selected="">-- Pilih Kategori --</option>
+                                <option value="konten">Konten</option>
+                                <option value="data">Data</option>
                                 <option value="akses internet">Akses Internet</option>
                                 <option value="umum">Umum</option>
                             </select>
                         </div>
 
-                        <div class="form-group">
-                            <label> Pesan </label>
+                        <div class="mb-3">
+                            <label class="form-label"> Pesan </label>
                             <textarea class="form-control"
                                 style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 86px;width: 100%;"
                                 placeholder="Tulis Pesan anda disini" id="pesan" name="pesan"></textarea>
@@ -234,7 +239,8 @@
                 <!-- Version Eko -->
                 <!-- Logo -->
                 <div class="col-md-4 col-sm-4 col-xs-2" id="top-col">
-                    <img id="logo-bakti-online" src="https://lp-staging.devlabs.id/assets/global/logo.png" style="float:left" />
+                    <img id="logo-bakti-online" src="https://lp-staging.devlabs.id/assets/global/logo.png"
+                        style="float:left" />
                     <a id="hubungi-kami-mobile" style="float: right; width: 30%; text-align: right;"
                         onClick="reply_click(this.id)" data-bs-toggle="modal" data-bs-target="#modalHubungi">
                         <u style="text-align: right;">
