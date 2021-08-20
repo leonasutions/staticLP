@@ -1,96 +1,606 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html>
+<!DOCTYPE html
+    public "-//w3c//dtd xhtml 1.0 transitional//en" "http://www.w3.org/tr/xhtml1/dtd/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta http-equiv="pragma" content="no-cache" />
-<meta http-equiv="expires" content="-1" />
-<title>mikrotik hotspot > ieeja </title>
-<style type="text/css">
-body {color: #737373; font-size: 10px; font-family: verdana;}
-
-textarea,input,select {
-background-color: #FDFBFB;
-border: 1px solid #BBBBBB;
-padding: 2px;
-margin: 1px;
-font-size: 14px;
-color: #808080;
-}
-
-a, a:link, a:visited, a:active { color: #AAAAAA; text-decoration: none; font-size: 10px; }
-a:hover { border-bottom: 1px dotted #c1c1c1; color: #AAAAAA; }
-img {border: none;}
-td { font-size: 14px; color: #7A7A7A; }
-</style>
-
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+    <title>Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <!-- <link href="./bootstrap.min.css" rel="stylesheet">
+    <script src="./bootstrap.bundle.min.js"></script>
+    <script src="./jquery.min.js"></script>
+    <script src="./client.min.js"></script>
+    <script src="./md5.js"></script> -->
+    <link href="https://lp-staging.devlabs.id/assets/global/bootstrap.min.css" rel="stylesheet">
+    <script src="https://lp-staging.devlabs.id/assets/global/bootstrap.bundle.min.js"></script>
+    <script src="https://lp-staging.devlabs.id/assets/global/jquery.min.js"></script>
+    <script src="https://lp-staging.devlabs.id/assets/global/client.min.js"></script>
+    <script src="https://lp-staging.devlabs.id/assets/global/md5.js"></script>
+    <link rel="stylesheet" href="https://lp-staging.devlabs.id/assets/global/style.css">
+    <!-- <link rel="stylesheet" href="./style.css"> -->
 </head>
 
 <body>
-$(if chap-id)
-	<form name="sendin" action="$(link-login-only)" method="post">
-		<input   name="username" />
-		<input   name="password" />
-		<input   name="dst" value="$(link-orig)" />
-		<input   name="popup" value="true" />
-	</form>
-	
-	<script type="text/javascript" src="./md5.js"></script>
-	<script type="text/javascript">
-	// <!--
-	    function doLogin() {
-		document.sendin.username.value = document.login.username.value;
-		document.sendin.password.value = hexMD5('$(chap-id)' + document.login.password.value + '$(chap-challenge)');
-		document.sendin.submit();
-		return false;
-	    }
-	//-->
-	</script>
-$(endif)
 
-<div align="center">
-<a href="$(link-login-only)?target=%2F&amp;dst=$(link-orig-esc)">English</a>
-</div>
+    <table hidden="true" width="100%" style="margin-top: 10%;">
+        <tr>
+            <td valign="middle">
+                <table width="240" height="240" style="border: 1px solid #cccccc; padding: 0px;" cellpadding="0"
+                    cellspacing="0">
+                    <tr>
+                        <td valign="bottom" height="175" colspan="2">
+                            <form name="login" id="log" action="$(link-login-only)" method="post">
+                                <input type="hidden" name="dst" value="$(link-orig)" />
+                                <input type="hidden" name="popup" value="true" />
 
-<table width="100%" style="margin-top: 10%;">
-	<tr>
-	<td align="center" valign="middle">
-		<div class="notice" style="color: #c1c1c1; font-size: 9px">Lūdzu pieslēdzieties, lai lietotu mikrotik hotspot servisu.<br />$(if trial == 'yes')Lai izmēģinātu bez maksas, <a style="color: #FF8080"href="$(link-login-only)?dst=$(link-orig-esc)&amp;username=T-$(mac-esc)">spiediet šeit.</a>.$(endif)</div><br />
-		<table width="240" height="240" style="border: 1px solid #cccccc; padding: 0px;" cellpadding="0" cellspacing="0">
-			<tr>
-				<td align="center" valign="bottom" height="175" colspan="2">
-					<form name="login" action="$(link-login-only)" method="post"
-					    $(if chap-id) onSubmit="return doLogin()" $(endif)>
-						<input type="hidden" name="dst" value="$(link-orig)" />
-						<input type="hidden" name="popup" value="true" />
-						
-							<table width="100" style="background-color: #ffffff">
-								<tr><td align="right">login</td>
-										<td><input style="width: 80px" name="username" type="text" value="$(username)"/></td>
-								</tr>
-								<tr><td align="right">parole</td>
-										<td><input style="width: 80px" name="password" type="password"/></td>
-								</tr>
-								<tr><td>&nbsp;</td>
-										<td><input type="submit" value="OK" /></td>
-								</tr>
-							</table>
-					</form>
-				</td>
-			</tr>
-			<tr><td align="center"><a href="http://www.mikrotik.com" target="_blank" style="border: none;"><img src="./logobottom.png" alt="mikrotik" /></a></td></tr>
-		</table>
-	
-	<br /><div style="color: #c1c1c1; font-size: 9px">nodrošina mikrotik routeros &copy; 2005 mikrotik</div>
-	$(if error)<br /><div style="color: #FF8080; font-size: 9px">$(error)</div>$(endif)
-	</td>
-	</tr>
-</table>
+                                <table width="100" style="background-color: #ffffff">
+                                    <tr>
+                                        <td>login</td>
+                                        <td><input style="width: 80px" type="hidden" name="username" type="text"
+                                                value="bakti" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>parole</td>
+                                        <td><input style="width: 80px" type="hidden" name="password" value="baktiaksi"
+                                                type="password" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td><input type="submit" value="OK" /></td>
+                                    </tr>
+                                </table>
+                            </form>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
 
-<script type="text/javascript">
+    <!-- modal banner -->
+    <div class="modal fade" id="modalBanner" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body item-align-center">
+                    <img id="imageBanner" class="img-fluid" src="./loading.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal video -->
+    <div class="modal fade" id="modalVideo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button id="closeButtonVideo" type="button" class="btn-close btn-close-white"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body drdpdown">
+                    <video id="videoPlayer" controls="controls" preload="metadata" width="100%" height="472px"
+                        disablepictureinpicture controlslist="nodownload"></video>
 
-  document.login.username.focus();
+                    <div class="dropdown mt-2 ">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Kualitas 144p
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><button id="resolusilower" class="dropdown-item">Kualitas 144p </a></li>
+                            <li><button id="resolusilow" class="dropdown-item">Kualitas 240p </a></li>
+                            <li><button id="resolusihigh" class="dropdown-item">Kualitas 360p </a></li>
+                        </ul>
+                    </div>
 
-</script>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal news -->
+    <div class="modal fade" id="modalBerita" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="beritaBody">
+                    <br />
+                    <p style="text-align: center;"></p>
+                    <p style="text-align: center;"></p>
+                    <img id="imageBerita" class="img-fluid" src="./loading.svg">
+                    <br />
+                    <p class="px-5" id="sinopsisBerita"></p>
+                    <p id="textSumber" class="px-5"><b id="sumber"></b> </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal Hubungi Kami -->
+    <div class="modal fade" id="modalHubungi" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="beritaBody">
+                    <br />
+                    <h2 style="text-align: center;color: #00438b;">Hubungi Kami</h2>
+                    <br />
+                    <p style="text-align: center;">Silahkan isi pertanyaan anda pada formulir dibawah ini atau
+                        hubungi (081231116525)</p>
+                    <br />
+                    <p style="text-align: center;">Silakan Kirim Pertanyaan Anda</p>
+                    <div class="alert alert-success" id="success-alert" style="display:none" role="alert">Data ticket
+                        berhasil di kirim</div>
+
+                    <form>
+                        <div class="form-group">
+                            <label> Nama Anda </label>
+                            <input class="form-control" placeholder="Ketik Disini" id="nama" name="nama">
+                        </div>
+
+                        <div class="form-group">
+                            <label> Nomor Telepon</label>
+                            <input class="form-control" type="number" placeholder="Contoh: (0856936985224)" id="notelp"
+                                name="notelp">
+                        </div>
+
+                        <div class="form-group">
+                            <label> Email </label>
+                            <input class="form-control" type="email" placeholder="Contoh: test@email.com" id="email"
+                                name="email">
+                        </div>
+
+                        <div class="form-group">
+                            <label> Pesan </label>
+                            <textarea class="form-control"
+                                style="overflow: hidden; overflow-wrap: break-word; resize: none; height: 86px;width: 100%;"
+                                placeholder="Tulis Pesan anda disini" id="pesan" name="pesan"></textarea>
+                        </div>
+
+
+                        <div style="display: flex; align-items: center; justify-content: center; margin-top:10px">
+                            <button id="submitHubungi">Kirim</button>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content -->
+    <div class="panel ">
+        <div id="gridcontainer" class="mobile-background">
+            <div class="row grid-row" id="top-row">
+                <!-- Logo -->
+                <!-- NEW VERSION HUBUNGI KAMI Radith-->
+                <!-- <div class="row">
+                    <div class="col px-0">
+                        <img id="logo-bakti-online" src="./logo.png"/>
+                    </div>
+                    <div class="col px-0">
+                        <a id="hubungi-kami-mobile" style="float: right; width: 100%; text-align: end;" onClick="reply_click(this.id)"
+                        data-bs-toggle="modal" data-bs-target="#modalHubungi">
+                        <u style="text-align: right;">
+                            Hubungi Kami
+                        </u>
+                    </a>
+                    </div>
+                </div> -->
+                <!-- OLD VERSION HUBUNGI KAMI -->
+                <!-- <div class="col-md-4 col-sm-4 col-xs-2" id="top-col">
+                    <img id="logo-bakti-online" src="./logo.png" style="float:left" />
+                    <a id="hubungi-kami-mobile" style="float: right; width: 30%;" onClick="reply_click(this.id)"
+                        data-bs-toggle="modal" data-bs-target="#modalHubungi">
+                        <u style="text-align: right;">
+                            Hubungi Kami
+                        </u>
+                    </a>
+
+                </div> -->
+
+                <!-- NEW VERSION ALERT Radith-->
+                <!-- <div class="row">
+                    <div id="top-alert" class="col-md-4 col-sm-4 p-0">
+                        <div class="alert alert-danger my-0" style="text-align: center; font-size: 14px; font-weight:100px;">
+                            JANGAN TUTUP HALAMAN INI
+                        </div>
+                    </div>
+                </div> -->
+                <!-- OLD VERSION ALERT-->
+                <!-- <div id="top-alert" class="col-md-4 col-sm-4">
+                    <div class="alert alert-danger" style="text-align: center; font-size: 14px; font-weight:100px;">
+                        JANGAN TUTUP HALAMAN INI
+                    </div>
+                </div> -->
+
+                <!-- old Hubungi Kami -->
+                <!-- <div id="box-hubungi-kami" class="col-md-4 col-sm-4">
+                    <a id="hubungiKami" style="float: right; padding-right: 10px;" onClick="reply_click(this.id)"
+                        data-bs-toggle="modal" data-bs-target="#modalHubungi">
+                        <u>
+                            Hubungi Kami
+                        </u>
+                    </a>
+
+                </div> -->
+
+                <!-- Version Eko -->
+                <!-- Logo -->
+                <div class="col-md-4 col-sm-4 col-xs-2" id="top-col">
+                    <img id="logo-bakti-online" src="./logo.png" style="float:left" />
+                    <a id="hubungi-kami-mobile" style="float: right; width: 30%; text-align: right;"
+                        onClick="reply_click(this.id)" data-bs-toggle="modal" data-bs-target="#modalHubungi">
+                        <u style="text-align: right;">
+                            Hubungi Kami
+                        </u>
+                    </a>
+
+                </div>
+
+                <div id="top-alert" class="cold-md-4 col-sm-4">
+                    <div class="alert alert-danger" style="text-align: center; font-size: 14px; font-weight:100px;">
+                        JANGAN TUTUP HALAMAN INI
+                    </div>
+                </div>
+                <!-- Hubungi Kami -->
+                <div id="box-hubungi-kami" class="cold-md-4 col-sm-4">
+                    <a id="hubungiKami" style="float: right; padding-right: 10px;" onClick="reply_click(this.id)"
+                        data-bs-toggle="modal" data-bs-target="#modalHubungi">
+                        <u>
+                            Hubungi Kami
+                        </u>
+                    </a>
+
+                </div>
+            </div>
+            <div class="row grid-row">
+                <div class="col-sm-6">
+                    <!-- Tulisan Selamat Datang -->
+                    <!-- NEW VERSION -->
+                    <div class="row my-1">
+                        <!-- <div class="col-sm-12 col-md-10 col-xs-12"> -->
+                        <h1 id='textSelamat'>Selamat Datang,</h1>
+                        <!-- </div> -->
+                    </div>
+                    <!-- Tulisan Body -->
+                    <div class="row mb-3">
+                        <div id="textInfo">
+                            Silahkan mengisi Survey terlebih dahulu untuk mendapatkan
+                            akses internet, dan pilih konten dibawah untuk mendapatkan
+                            informasi terkini.
+                        </div>
+                    </div>
+                    <!-- OLD VERSION -->
+                    <!-- <div class="row grid-row">
+                        <div class="col-sm-12 col-md-10 col-xs-12">
+                            <h1 id='textSelamat'>Selamat Datang,</h1>
+                        </div>
+                    </div> -->
+                    <!-- Tulisan Body -->
+                    <!-- <div class="row grid-row">
+                        <div class="col-sm-12 col-md-10 col-xs-12" id="textInfo">
+                            Silahkan mengisi Survey terlebih dahulu untuk mendapatkan
+                            akses internet, dan pilih konten dibawah untuk mendapatkan
+                            informasi terkini.
+                        </div>
+                    </div> -->
+                    <!-- button internet -->
+                    <div id="desktop-connect-internet" class="row grid-row ">
+                        <div class="col-sm-12 col-md-10 col-xs-12">
+                            <div>
+                                <h6 id="textCountdown">Anda akan terhubung ke internet setelah 45 detik, atau selesaikan
+                                    survey dan klik tombol hubungkan ke internet</h>
+                            </div>
+                            <div>
+                                <button class="btn btn-primary" id='hubungButton' onclick="konekInternet()"
+                                    disabled='true' type="button">Hubungkan ke
+                                    Internet</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- button Content -->
+                    <div class="row">
+                        <div class="col-md-10 col-sm-12 col-xs-12">
+                            <!-- button Video -->
+                            <a id="videoButton" onClick="reply_click(this.id)" class="button" data-bs-toggle="modal"
+                                data-bs-target="#modalVideo">
+                                <div class="center">
+
+
+                                    <div class="row">
+                                        <div class="col-2 col-sm-2 col-md-2 col-lg-1">
+                                            <img src="./video.svg" />
+                                        </div>
+                                        <div class="col-10 col-sm-10 col-md-10 col-lg-11">
+                                            <div class="btnText">
+                                                Video
+                                                <span id="judulVideo" title="" style="font-size: 10px;">Judul
+                                                    Video</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- button Banner -->
+                    <div class="row my-2">
+                        <div class="col-md-10 col-sm-12 col-xs-12">
+                            <a id="bannerButton" onClick="reply_click(this.id)" class="button" data-bs-toggle="modal"
+                                data-bs-target="#modalBanner">
+                                <div class="center">
+
+
+                                    <div class="row">
+                                        <div class="col-2 col-xs-2 col-sm-2 col-md-2 col-lg-1">
+                                            <img src="./banner.svg" />
+                                        </div>
+                                        <div class="col-10 col-xs-10 col-sm-10 col-md-10 col-lg-11">
+                                            <div class="btnText">
+                                                Banner
+                                                <span id="judulBanner" title="" style="font-size: 10px;">Judul
+                                                    Banner</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- button News -->
+                    <div class="row">
+                        <div class="col-md-10 col-sm-12 col-xs-12">
+                            <a id="beritaButton" onClick="reply_click(this.id)" class="button" data-bs-toggle="modal"
+                                data-bs-target="#modalBerita">
+                                <div class="center">
+                                    <div class="row">
+                                        <div class="col-2 col-xs-1 col-sm-2 col-md-2 col-lg-1">
+                                            <img src="./berita.svg" />
+                                        </div>
+                                        <div class="col-10 col-xs-10 col-sm-10 col-md-10 col-lg-11">
+                                            <div class="btnText">
+                                                Berita
+                                                <span id="judulBerita" title="" style="font-size: 10px;">Judul
+                                                    Berita</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- <div class="row">
+                        <div id="beritaButton" onClick="reply_click(this.id)" class="col-xs-2" data-bs-toggle="modal"
+                        data-bs-target="#modalBerita">
+                            <a id="beritaButton" onClick="reply_click(this.id)" class="button" data-bs-toggle="modal"
+                            data-bs-target="#modalBerita">
+                            <div class="center">
+                                <img src="./berita.svg" />
+                                
+                            </div>
+                        </a>
+                        </div>
+                        <div class="col-xs-10">
+                            <a id="beritaButton" onClick="reply_click(this.id)" class="button" data-bs-toggle="modal"
+                            data-bs-target="#modalBerita">
+                            <div class="center">
+                                <img src="./berita.svg" />
+                                <div class="btnText">
+                                    Berita
+                                    <span id="judulBerita" title="" style="font-size: 10px;">Judul Berita</span>
+                                </div>
+                            </div>
+                        </a>
+                        </div>
+                    </div> -->
+
+                </div>
+                <!-- Survey -->
+                <div class="col-sm-6">
+                    <!-- progress -->
+                    <div class="row m-2 grid-row progress-text">
+                        <div class="col-sm-1 text-center" id="textCount">-</div>
+                        <div class="col-sm-10 text-center">Progress</div>
+                    </div>
+                    <div class="row m-2 grid-row progress">
+                        <div id="bar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
+
+                    <!-- button internet mobile -->
+                    <div id="mobile-connect-internet" class="row grid-row ">
+                        <div class="col-sm-12 col-md-10 col-xs-12">
+                            <div>
+                                <h6 id="textCountdown2" style="text-align: center;">Anda akan terhubung ke internet
+                                    setelah 45 detik, atau
+                                    selesaikan
+                                    survey dan klik tombol hubungkan ke internet</h>
+                            </div>
+                            <div style="display: flex; justify-content: center;">
+                                <button class="btn btn-primary" id='hubungButton2' onclick="konekInternet()"
+                                    disabled='true' type="button"
+                                    style="border-radius: 7px; background-color: #00438b;">Hubungkan ke
+                                    Internet</button>
+                            </div>
+                            <!-- <div>
+                                <button class="btn btn-primary" id='hubungButton2' onclick="konekInternet()"
+                                    disabled='true' type="button">Hubungkan ke
+                                    Internet</button>
+                            </div> -->
+                        </div>
+                    </div>
+
+                    <!-- questions -->
+                    <div class="row">
+                        <div class="container text-center mb-3" id="doneSurvey">
+                            <img src="./check.svg" class="mb-3" width="23%"></img>
+                        </div>
+
+                        <div class="container text-center" id="regForm">
+                            <form class="text-center" id='formulir'>
+                                <h2>Silahkan isi survei berikut ini</h2>
+
+                                <div class="tab">
+                                    Nama Anda
+                                    <p><input placeholder="Nama Depan" oninput="this.className = ''" id="survey-0-1"
+                                            name="fname"></p>
+                                    <p><input placeholder="Nama Belakang" oninput="this.className = ''" id="survey-0-1"
+                                            name="lname"></p>
+                                </div>
+                                <div class="tab">
+                                    <p style="text-align: center;">Tanggal Lahir Anda</p>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <!-- <label class="input-group-text" for="daysDropdown">Hari</label> -->
+                                            <select class="form-select" name="tanggal" id="daysDropdown">
+                                                <option value="" selected disabled hidden>Tanggal</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <!-- <label class="input-group-text"  for="monthsDropdown">Bulan</label> -->
+                                            <select class="form-select" name="bulan" id="monthsDropdown">
+                                                <option value="" selected disabled hidden>Bulan</option>
+                                            </select>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <!-- <label class="input-group-text"  for="yearsDropdown">Tahun</label> -->
+                                            <select class="form-select" name="tahun" id="yearsDropdown">
+                                                <option value="" selected disabled hidden>Tahun</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="tab">
+                                    <p style="text-align: center;">Jenis Kelamin Anda</p>
+
+                                    <div class="survey-form-gender show pr-3 pl-3 survey-page-content" data-survey="4">
+                                        <div class="survey-page-inner">
+                                            <div class="survey-q-select d-flex justify-content-center">
+                                                <div class="survey-select-item gender-1">
+                                                    <input class="survey-gender-1 survey-gender-input input-check-3"
+                                                        id="survey-gender-1" type="radio" name="gender" tabindex="-1"
+                                                        value="1" />
+                                                    <label class="survey-select-item-inner" for="survey-gender-1">
+                                                        <div id="genderImg1" class="survey-select-item-label-picture">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <div class="survey-select-item gender-2">
+                                                    <input class="survey-gender-1 survey-gender-input input-check-3"
+                                                        id="survey-gender-2" type="radio" name="gender" tabindex="-1"
+                                                        value="2" />
+                                                    <label class="survey-select-item-inner" for="survey-gender-2">
+                                                        <div id='genderImg2' class="survey-select-item-label-picture">
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab" style="text-align: left;">
+
+                                    <p style="text-align: center;">Jenjang Pendidikan Terakhir</p>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="education"
+                                            id="survey-education-1" value="1">
+                                        <label class="form-check-label" for="survey-education-1">SD / Sederajat</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="education"
+                                            id="survey-education-2" value="2">
+                                        <label class="form-check-label" for="survey-education-2">SMP / Sederajat</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="education"
+                                            id="survey-education-3" value="3">
+                                        <label class="form-check-label" for="survey-education-3">SMA / Sederajat</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="education"
+                                            id="survey-education-4" value="4">
+                                        <label class="form-check-label" for="survey-education-4">Pendidikan Tinggi /
+                                            Sederajat</label>
+                                    </div>
+                                </div>
+                                <div class="tab" style="text-align: left;">
+
+                                    <p style="text-align: center;">Status Pernikahan</p>
+
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="status" id="inlineRadio1"
+                                            value="1">
+                                        <label class="form-check-label" for="inlineRadio1">Belum Menikah</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="status" id="inlineRadio2"
+                                            value="2">
+                                        <label class="form-check-label" for="inlineRadio2">Menikah</label>
+                                    </div>
+                                </div>
+                            </form>
+                            <div id="containerButton">
+                                <div id="contButton">
+                                    <button class="btn btn-primary btn-sm btn-xs" type="button" id="prevBtn"
+                                        onclick="nextPrev(-1)">Kembali</button>
+                                    <button class="btn btn-primary btn-sm btn-xs" type="button" title="" id="nextBtn"
+                                        data-bs-toggle="tooltip" data-bs-placement="top"
+                                        onclick="nextPrev(1)">Selanjutnya</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row footer">
+                <div style="text-align: left;">Copyright &copy; 2021 All Rights Reserved</div>
+            </div>
+        </div>
+
+    </div>
+    <!-- <form id="logininternet" name="linkLogin" action="https://icms-auth.baktikominfo.id/authentikasi/auth.php"
+        method="POST">
+        <input id="userInput" type="hidden" name="username" />
+        <input id="passwordInput" type="hidden" name="password" />
+        <input id="passwordInput" type="hidden" name="password" />
+        <input id="passwordInput" type="hidden" name="password" />
+    </form> -->
+    <form id="logininternet" name="linkLogin" action="https://icms-auth.baktikominfo.id/authentikasi/auth.php"
+        method="POST">
+        <input id="macInput" type="hidden" name="mac" value="$(mac)" />
+        <input id="ipInput" type="hidden" name="ip" value="$(mac)" />
+        <input id="userInput" type="hidden" name="username" />
+        <input id="linkLoginInput" type="hidden" name="link-login" value="$(link-login)" />
+        <input id="linkOrigInput" type="hidden" name="link-orig" value="$(link-orig)" />
+        <input id="linkLoginOnlyInput" type="hidden" name="link-login-only" value="$(link-login-only)" />
+        <input id="passwordInput" type="hidden" name="password" />
+    </form>
+    <input type="hidden" id="mac" value="$(mac)">
+    <input type="hidden" id="ipLocal" value="$(ip)">
 </body>
+
 </html>
+
+
+<!-- <script type="text/javascript" src="https://lp-staging.devlabs.id/assets/global/script.js"></script> -->
+<script type="text/javascript" src="./script.js"></script>

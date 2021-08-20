@@ -5,6 +5,7 @@ let videoArray = [];
 let audioArray = [];
 var dfp;
 var dataAll;
+let isp_id;
 var passwordLogin = "baktiaksi";
 var username = "bakti";
 // var unencryptedPassword = chapId + passwordLogin + chapChallenge;
@@ -255,13 +256,15 @@ function getJadwal() {
     data: formData,
     url: "https://lp-staging.devlabs.id/get/jadwal/",
     success: function (data) {
-      var timeLeft = 45;
+      var timeLeft = 900;
 
       var elem = document.getElementById("textCountdown");
       var elem2 = document.getElementById("textCountdown2");
-
+      console.log(data);
       dfp = data.dfp._id;
+
       sch = data.schedule;
+      isp_id = data.isp_id
       dataAll = data;
       demoId = data.demoId;
       $("#judulBanner").text(
@@ -724,7 +727,6 @@ $("#submitHubungi").click(function (event) {
       },
       error: function (request, status, error) {
         alert(error);
-        // $(".demoName").text("Halo, " + $("#survey-q1-input").val())
       },
     });
   }
@@ -732,3 +734,84 @@ $("#submitHubungi").click(function (event) {
 $("#modalVideo").on("hide.bs.modal", function(e) {
   $("#videoPlayer").attr("src", "");
 });
+let bannerImpresionStatus = false
+let newsImpresionStatus = false
+let videoImpresionStatus = false
+$("#bannerButton").on("click",function(e){
+  if (!bannerImpresionStatus){
+    const dataBanner = {
+      dfp: dfp,
+      banner: sch.banner._id,
+      version: "1",
+      isp_id:isp_id ,
+    };
+  
+    $.ajax({
+      type: "POST",
+      contentType: "application/json",
+      url: url + "survey/banner/impression",
+      data: JSON.stringify(dataBanner),
+      dataType: "json",
+      success: function () {
+       bannerImpresionStatus=true
+      },
+      error: function (request, status, error) {
+        alert(error);
+      },
+    });
+  }
+  
+})
+
+$("#beritaButton").on("click",function(e){
+  if (!newsImpresionStatus){
+    const dataNews = {
+      dfp: dfp,
+      news: sch.news._id,
+      version: "1",
+      isp_id:isp_id ,
+    };
+  
+    $.ajax({
+      type: "POST",
+      contentType: "application/json",
+      url: url + "survey/news/impression",
+      data: JSON.stringify(dataNews),
+      dataType: "json",
+      success: function () {
+        newsImpresionStatus=true
+      },
+      error: function (request, status, error) {
+        alert(error);
+      },
+    });
+  }
+  
+})
+
+
+$("#videoButton").on("click",function(e){
+  if (!videoImpresionStatus){
+    const dataNews = {
+      dfp: dfp,
+      video: sch.video._id,
+      version: "1",
+      isp_id:isp_id ,
+    };
+  
+    $.ajax({
+      type: "POST",
+      contentType: "application/json",
+      url: url + "survey/video/impression",
+      data: JSON.stringify(dataNews),
+      dataType: "json",
+      success: function () {
+        videoImpresionStatus=true
+      },
+      error: function (request, status, error) {
+        alert(error);
+      },
+    });
+  }
+  
+})
