@@ -199,7 +199,7 @@ function reply_click(clicked_id) {
     $("#asd").text(sch.news.title);
     $("#sinopsisBerita").text(sch.news.sinopsis);
     var domain = new URL(sch.news.link);
-    $("#sumber").text('sumber : '+domain.hostname.split(".")[1]);
+    $("#sumber").text("sumber : " + domain.hostname.split(".")[1]);
     var image = $("#imageBerita").attr("src");
     if (image != url + sch.news.details.url) {
       $("#imageBerita").attr("src", url + sch.news.details.url);
@@ -207,14 +207,13 @@ function reply_click(clicked_id) {
   }
 }
 
-function shortChar(char) { 
-
-  var newChars = char
-  if(char.length > 50) { 
-    newChars = char.slice(0,50)+" ... "
+function shortChar(char) {
+  var newChars = char;
+  if (char.length > 50) {
+    newChars = char.slice(0, 50) + " ... ";
   }
 
-  return newChars
+  return newChars;
 }
 
 $(document).ready(function () {
@@ -256,7 +255,7 @@ function getJadwal() {
     data: formData,
     url: "https://lp-staging.devlabs.id/get/jadwal/",
     success: function (data) {
-      var timeLeft = 900;
+      var timeLeft = 15;
 
       var elem = document.getElementById("textCountdown");
       var elem2 = document.getElementById("textCountdown2");
@@ -264,7 +263,7 @@ function getJadwal() {
       dfp = data.dfp._id;
 
       sch = data.schedule;
-      isp_id = data.isp_id
+      isp_id = data.isp_id;
       dataAll = data;
       demoId = data.demoId;
       $("#judulBanner").text(
@@ -272,21 +271,36 @@ function getJadwal() {
           ? shortChar(data.schedule.banner.details.title)
           : "-"
       );
-      $("#judulVideo").text(data.schedule.video.details.title ? shortChar(data.schedule.video.details.title) : "");
-      $("#judulBerita").text(data.schedule.news.title ? shortChar(data.schedule.news.title) : "");
-      
-      $("#judulBanner").attr("title",data.schedule.banner.details.title
+      $("#judulVideo").text(
+        data.schedule.video.details.title
+          ? shortChar(data.schedule.video.details.title)
+          : ""
+      );
+      $("#judulBerita").text(
+        data.schedule.news.title ? shortChar(data.schedule.news.title) : ""
+      );
+
+      $("#judulBanner").attr(
+        "title",
+        data.schedule.banner.details.title
           ? data.schedule.banner.details.title
           : "-"
-      )
-      $("#judulVideo").attr("title",data.schedule.video.details.title ? data.schedule.video.details.title : "");
-      $("#judulBerita").attr("title",data.schedule.news.title ? data.schedule.news.title : "");
+      );
+      $("#judulVideo").attr(
+        "title",
+        data.schedule.video.details.title
+          ? data.schedule.video.details.title
+          : ""
+      );
+      $("#judulBerita").attr(
+        "title",
+        data.schedule.news.title ? data.schedule.news.title : ""
+      );
 
       demo = data.demo;
       survey = data.survey;
       //   console.log(document.getElementById("mac").value);
       if (demo && survey) {
-
         elem.hidden = true;
         elem2.hidden = true;
 
@@ -305,7 +319,6 @@ function getJadwal() {
         $("#textCount").text(
           data.questionsLength + 5 + "/" + (data.questionsLength + 5)
         );
-
       } else if (demo == true && survey == false) {
         var timerId = setInterval(countdown, 1000);
         function countdown() {
@@ -319,7 +332,6 @@ function getJadwal() {
             hubungButon2.hidden = false;
 
             konekInternet();
-
           } else {
             elem.innerHTML =
               "Anda akan terhubung ke internet setelah " +
@@ -400,7 +412,7 @@ function getJadwal() {
               "Anda akan terhubung ke internet setelah " +
               timeLeft +
               " detik, atau selesaikan survey dan klik tombol hubungkan ke internet";
-            
+
             elem2.innerHTML =
               "Anda akan terhubung ke internet setelah " +
               timeLeft +
@@ -459,14 +471,11 @@ function getJadwal() {
   });
 }
 
-
-
 var currentTab = 0;
 showTab(currentTab);
 
 var maxDate = new Date().getFullYear();
 var min = maxDate - 80;
-
 
 for (var i = maxDate; i >= min; i--) {
   $("#yearsDropdown").append($("<option></option>").attr("value", i).text(i));
@@ -622,25 +631,23 @@ function validateForm() {
       }
     }
   }
-  var ageValid= true
+  var ageValid = true;
   // console.log(output);
-  if(maxDate-parseInt(document.getElementById("yearsDropdown").value)<8){
-    ageValid=false
-    valid=false
+  if (maxDate - parseInt(document.getElementById("yearsDropdown").value) < 8) {
+    ageValid = false;
+    valid = false;
   }
   if (!valid && !ageValid) {
     var exampleEl = document.getElementById("nextBtn");
-    exampleEl.title="Silahkan isi umur anda minimal 8 tahun"
+    exampleEl.title = "Silahkan isi umur anda minimal 8 tahun";
     var tooltip = new bootstrap.Tooltip(exampleEl);
     tooltip.show();
     setTimeout(function () {
       tooltip.dispose();
     }, 2000);
-    
-  }
-  else if(!valid){
+  } else if (!valid) {
     var exampleEl = document.getElementById("nextBtn");
-    exampleEl.title="Silahkan Mengisi Jawaban diatas sebelum melanjutkan"
+    exampleEl.title = "Silahkan Mengisi Jawaban diatas sebelum melanjutkan";
     var tooltip = new bootstrap.Tooltip(exampleEl);
     tooltip.show();
     setTimeout(function () {
@@ -659,7 +666,8 @@ function konekInternet() {
   form.submit();
 }
 $("#submitHubungi").click(function (event) {
-  const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const re =
+    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   let $this = $(this);
   event.preventDefault();
   if (
@@ -731,21 +739,21 @@ $("#submitHubungi").click(function (event) {
     });
   }
 });
-$("#modalVideo").on("hide.bs.modal", function(e) {
+$("#modalVideo").on("hide.bs.modal", function (e) {
   $("#videoPlayer").attr("src", "");
 });
-let bannerImpresionStatus = false
-let newsImpresionStatus = false
-let videoImpresionStatus = false
-$("#bannerButton").on("click",function(e){
-  if (!bannerImpresionStatus){
+let bannerImpresionStatus = false;
+let newsImpresionStatus = false;
+let videoImpresionStatus = false;
+$("#bannerButton").on("click", function (e) {
+  if (!bannerImpresionStatus) {
     const dataBanner = {
       dfp: dfp,
       banner: sch.banner._id,
       version: "1",
-      isp_id:isp_id ,
+      isp_id: isp_id,
     };
-  
+
     $.ajax({
       type: "POST",
       contentType: "application/json",
@@ -753,25 +761,24 @@ $("#bannerButton").on("click",function(e){
       data: JSON.stringify(dataBanner),
       dataType: "json",
       success: function () {
-       bannerImpresionStatus=true
+        bannerImpresionStatus = true;
       },
       error: function (request, status, error) {
         alert(error);
       },
     });
   }
-  
-})
+});
 
-$("#beritaButton").on("click",function(e){
-  if (!newsImpresionStatus){
+$("#beritaButton").on("click", function (e) {
+  if (!newsImpresionStatus) {
     const dataNews = {
       dfp: dfp,
       news: sch.news._id,
       version: "1",
-      isp_id:isp_id ,
+      isp_id: isp_id,
     };
-  
+
     $.ajax({
       type: "POST",
       contentType: "application/json",
@@ -779,26 +786,24 @@ $("#beritaButton").on("click",function(e){
       data: JSON.stringify(dataNews),
       dataType: "json",
       success: function () {
-        newsImpresionStatus=true
+        newsImpresionStatus = true;
       },
       error: function (request, status, error) {
         alert(error);
       },
     });
   }
-  
-})
+});
 
-
-$("#videoButton").on("click",function(e){
-  if (!videoImpresionStatus){
+$("#videoButton").on("click", function (e) {
+  if (!videoImpresionStatus) {
     const dataNews = {
       dfp: dfp,
       video: sch.video._id,
       version: "1",
-      isp_id:isp_id ,
+      isp_id: isp_id,
     };
-  
+
     $.ajax({
       type: "POST",
       contentType: "application/json",
@@ -806,12 +811,11 @@ $("#videoButton").on("click",function(e){
       data: JSON.stringify(dataNews),
       dataType: "json",
       success: function () {
-        videoImpresionStatus=true
+        videoImpresionStatus = true;
       },
       error: function (request, status, error) {
         alert(error);
       },
     });
   }
-  
-})
+});
